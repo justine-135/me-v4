@@ -5,17 +5,16 @@ import useThemeValues from '@/hooks/useThemeValues'
 import NavLinks from './NavLinks'
 
 export default function Sidebar() {
-  const { border, background } = useThemeValues()
+  const { background } = useThemeValues()
 
   return (
     <Box
       position="fixed"
       h="100vh"
-      w="18rem"
+      w="24rem"
       px="2rem"
       background={background}
       borderRightWidth="1px"
-      borderRightColor={border}
       zIndex={0}
     >
       <Box>

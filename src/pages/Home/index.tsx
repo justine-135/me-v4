@@ -1,10 +1,9 @@
-import PageLayout from '@/layout/PageLayout'
-import { Text } from '@chakra-ui/react'
+import { Typography } from '@/components/Typography'
 
-export default function index() {
+export default function Home() {
   return (
-    <PageLayout>
-      <Text>
+    <>
+      <Typography>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quasi consectetur quaerat culpa
         necessitatibus optio tempore quod possimus accusamus rerum aut aperiam deleniti omnis hic,
         minus temporibus nostrum suscipit atque sapiente? Aliquid, ea? Velit, eos. Consequatur nemo
@@ -48,7 +47,7 @@ export default function index() {
         ullam porro repellendus placeat qui esse laudantium, omnis natus quia itaque minima,
         quibusdam officiis magni ipsa aliquam expedita nesciunt harum eveniet praesentium voluptatem
         incidunt facilis. Ad sint sed blanditiis debitis labore qui eligendi fuga illum est enim.
-      </Text>
-    </PageLayout>
+      </Typography>
+    </>
   )
 }

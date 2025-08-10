@@ -13,9 +13,9 @@ const config = defineConfig({
     tokens: {
       colors: {
         backgroundLight: { value: 'white' },
-        backgroundDark: { value: 'black' },
-        borderLight: { value: '#c2c2c2' },
-        borderDark: { value: '#383838' },
+        backgroundDark: { value: '#111111' },
+        backgroundAccentLight: { value: '#f3f3f3' },
+        backgroundAccentDark: { value: '#1d1d1d' },
       },
     },
   },

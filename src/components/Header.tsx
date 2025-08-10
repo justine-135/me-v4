@@ -1,9 +1,9 @@
 import { Flex } from '@chakra-ui/react'
-import { ToggleThemeButton } from '../Button/ToggleThemeButton'
+import { ToggleThemeButton } from './Button/ToggleThemeButton'
 import useThemeValues from '@/hooks/useThemeValues'
 
 export default function Header() {
-  const { border, background } = useThemeValues()
+  const { background } = useThemeValues()
 
   return (
     <Flex
@@ -13,9 +13,8 @@ export default function Header() {
       alignItems="center"
       h="48px"
       w="100%"
-      paddingX={4}
+      paddingX="2rem"
       background={background}
-      borderColor={border}
       borderBottomWidth="1px"
       zIndex={3}
     >
