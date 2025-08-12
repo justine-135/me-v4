@@ -1,6 +1,6 @@
 import { Typography } from '@/components/Typography'
 
-export default function Home() {
+export default function HomePage() {
   return (
     <>
       <Typography>

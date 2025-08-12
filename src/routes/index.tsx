@@ -1,16 +1,16 @@
-import Home from '@/pages/Home'
-import About from '@/pages/About'
+import HomePage from '@/pages/HomePage'
+import AboutPage from '@/pages/AboutPage'
 import { Route, Routes } from 'react-router'
 import PageLayout from '@/layout/PageLayout'
 
 const APP_ROUTES = [
   {
     to: '/',
-    element: <Home />,
+    element: <HomePage />,
   },
   {
     to: '/about',
-    element: <About />,
+    element: <AboutPage />,
   },
 ]
 

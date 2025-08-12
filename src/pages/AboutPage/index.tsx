@@ -7,7 +7,7 @@ import { SkillsCard } from './SkillsCard'
 import { InterestsCard } from './InterestsCard'
 import { Stack } from '@chakra-ui/react/stack'
 
-export default function About() {
+export default function AboutPage() {
   const { name, job_title, intros, interests, experiences, skills } = aboutDetail
 
   return (
