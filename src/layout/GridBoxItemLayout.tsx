@@ -1,6 +1,6 @@
 import { Box, type BoxProps } from '@chakra-ui/react/box'
 
-interface IGrixBoxItemLayoutProps extends BoxProps {
+export interface IGrixBoxItemLayoutProps extends BoxProps {
   children: React.ReactNode
 }
 

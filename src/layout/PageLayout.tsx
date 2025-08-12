@@ -1,16 +1,18 @@
-import Header from '@/components/Header'
-import Sidebar from '@/components/Sidebar'
-import { Box } from '@chakra-ui/react'
-import React from 'react'
+import { Typography } from '@/components/Typography'
+import { Stack } from '@chakra-ui/react/stack'
+import type React from 'react'
+import GridBoxLayout from './GridBoxLayout'
 
-export default function PageLayout({ children }: { children: React.ReactNode }) {
+interface IPageLayoutProps {
+  title: string
+  children: React.ReactNode
+}
+
+export default function PageLayout({ title, children }: IPageLayoutProps) {
   return (
-    <Box pt="48px">
-      <Header />
-      <Sidebar />
-      <Box ml="24rem" p={4}>
-        {children}
-      </Box>
-    </Box>
+    <Stack gap={4}>
+      <Typography variant="heading">{title}</Typography>
+      <GridBoxLayout>{children}</GridBoxLayout>
+    </Stack>
   )
 }

@@ -1,11 +1,10 @@
-import CardCustom from '@/components/CardCustom'
 import TimelineCustom from '@/components/TimelineCustom'
-import GridBoxItemLayout from '@/layout/GridBoxItemLayout'
+import GridCard from '@/layout/GridCard'
 
 interface IExperienceCardProps {
   experiences: {
     title: string
-    company: string
+    subtitle: string
     date: string
     details: string[]
     technologies: string[]
@@ -23,10 +22,8 @@ export const ExperienceCard = ({ experiences }: IExperienceCardProps) => {
   })
 
   return (
-    <GridBoxItemLayout>
-      <CardCustom cardTitle="Experience">
-        <TimelineCustom data={timelineData} />
-      </CardCustom>
-    </GridBoxItemLayout>
+    <GridCard cardCustomProps={{ cardTitle: 'Experience' }}>
+      <TimelineCustom data={timelineData} />
+    </GridCard>
   )
 }

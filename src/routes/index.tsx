@@ -1,7 +1,8 @@
 import HomePage from '@/pages/HomePage'
 import AboutPage from '@/pages/AboutPage'
 import { Route, Routes } from 'react-router'
-import PageLayout from '@/layout/PageLayout'
+import WrapperLayout from '@/layout/WrapperLayout'
+import EducationPage from '@/pages/EducationPage'
 
 const APP_ROUTES = [
   {
@@ -12,6 +13,10 @@ const APP_ROUTES = [
     to: '/about',
     element: <AboutPage />,
   },
+  {
+    to: '/education',
+    element: <EducationPage />,
+  },
 ]
 
 export const AppRoutes = () => {
@@ -21,7 +26,7 @@ export const AppRoutes = () => {
         return (
           <Route
             path={appRoute.to}
-            element={<PageLayout>{appRoute.element}</PageLayout>}
+            element={<WrapperLayout>{appRoute.element}</WrapperLayout>}
             key={idx}
           />
         )

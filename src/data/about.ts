@@ -1,4 +1,4 @@
-export const aboutDetail = {
+export const about_data = {
   name: 'Justine Upano',
   job_title: 'Web Developer',
   intros: [
@@ -9,7 +9,7 @@ export const aboutDetail = {
   experiences: [
     {
       title: 'ReactJS Developer',
-      company: 'New Stars Solutions Inc.',
+      subtitle: 'New Stars Solutions Inc.',
       date: 'September 2023 - Present',
       details: [
         'Built and maintained scalable, mobile-responsive user interfaces using ReactJS and SCSS, enhancing user experience across multiple devices.',
@@ -25,7 +25,7 @@ export const aboutDetail = {
     },
     {
       title: 'Intern Web Developer',
-      company: 'Sabang Elementary School',
+      subtitle: 'Sabang Elementary School',
       date: 'March 2023 - June 2023',
       details: [
         'Collaborated with the team as a Fullstack developer to build a web-based student management system tailored for teachers and admins, enabling efficient tracking of student information and grades.',
