@@ -13,7 +13,7 @@ export default function AboutPage() {
   return (
     <Stack gap={4}>
       <Typography variant="heading">About</Typography>
-      <Box columnCount={{ base: 1, md: 2 }} columnGap={4}>
+      <Box columnCount={{ mdToLg: 1, md: 2 }} columnGap={4}>
         <IntroductionCard name={name} jobTitle={job_title} intros={intros} />
         <ExperienceCard experiences={experiences} />
         <SkillsCard skills={skills} />

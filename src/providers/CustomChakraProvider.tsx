@@ -16,8 +16,11 @@ const config = defineConfig({
         backgroundDark: { value: '#111111' },
         backgroundAccentLight: { value: '#f3f3f3' },
         backgroundAccentDark: { value: '#1d1d1d' },
+        textDark: { value: '#a1a1aa' },
+        textLight: { value: '#52525b' },
       },
     },
+    breakpoints: {},
   },
 })
 

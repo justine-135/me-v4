@@ -20,7 +20,7 @@ export const aboutDetail = {
         'Actively participated in daily meetings, identifying issues early and providing constructive suggestions to enhance team efficiency and project outcomes.',
         'Helped onboard new team members by walking them through codebase architecture and front-end workflows.',
       ],
-      technologies: ['reactjs', 'nextjs', 'typescript', 'scss', 'rest-api'],
+      technologies: ['reactjs', 'nextjs', 'typescript', 'scss', 'restapi'],
       current: true,
     },
     {
@@ -53,6 +53,7 @@ export const aboutDetail = {
         'python',
         'postresql',
         'mysql',
+        'restapi',
       ],
     },
     {

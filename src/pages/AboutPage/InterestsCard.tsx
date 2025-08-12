@@ -6,7 +6,7 @@ import { Stack } from '@chakra-ui/react/stack'
 export const InterestsCard = ({ interests }: { interests: string[] }) => {
   return (
     <GridBoxItemLayout>
-      <CardCustom cardTitle="Interests" maxW="sm">
+      <CardCustom cardTitle="Interests" maxW={{ mdToLg: 'full', md: 'sm' }}>
         <Stack wrap="wrap">
           {interests.map((interest) => {
             return <Typography key={interest}>{interest}</Typography>

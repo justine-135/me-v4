@@ -15,7 +15,7 @@ interface ISkillsCardProps {
 export const SkillsCard = ({ skills }: ISkillsCardProps) => {
   return (
     <GridBoxItemLayout>
-      <CardCustom cardTitle="Skills" maxW="sm">
+      <CardCustom cardTitle="Skills" maxW={{ mdToLg: 'full', md: 'sm' }}>
         <Stack gap={4}>
           {skills.map((skill) => {
             return (

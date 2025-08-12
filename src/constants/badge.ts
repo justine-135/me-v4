@@ -12,4 +12,5 @@ export const SKILL_COLORS: Record<string, BadgeProps['colorPalette']> = {
   python: 'teal',
   postresql: 'cyan',
   mysql: 'blue',
+  restapi: 'orange',
 }
