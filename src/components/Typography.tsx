@@ -11,11 +11,11 @@ const variantStyles = {
     fontWeight: 'semibold',
   },
   subheading: {
-    fontSize: ['md', 'lg'],
+    fontSize: ['sm', 'md'],
     fontWeight: 'semibold',
   },
   body: {
-    fontSize: ['sm', 'md'],
+    fontSize: ['xs', 'sm'],
     fontWeight: 'normal',
     color: 'gray.500',
   },

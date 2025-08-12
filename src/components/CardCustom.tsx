@@ -1,24 +1,23 @@
-import { Card } from '@chakra-ui/react'
+import { Card, type CardRootProps } from '@chakra-ui/react/card'
 import React from 'react'
 import { Typography } from './Typography'
 
-export default function CardCustom({
-  title,
-  children,
-}: {
-  title?: React.ReactNode | string
+interface ICardCustomProps extends CardRootProps {
+  cardTitle?: React.ReactNode | string
   children: React.ReactNode
-}) {
-  const isTitleString = typeof title === 'string'
+}
+
+export default function CardCustom({ cardTitle, children, ...rest }: ICardCustomProps) {
+  const isTitleString = typeof cardTitle === 'string'
 
   return (
-    <Card.Root maxW="sm">
+    <Card.Root {...rest}>
       <Card.Header>
         <Card.Title>
-          {isTitleString ? <Typography variant="subheading">{title}</Typography> : title}
+          {isTitleString ? <Typography variant="subheading">{cardTitle}</Typography> : cardTitle}
         </Card.Title>
       </Card.Header>
-      <Card.Body>{children}</Card.Body>
+      <Card.Body pt={!cardTitle ? '0px' : '24px'}>{children}</Card.Body>
     </Card.Root>
   )
 }
