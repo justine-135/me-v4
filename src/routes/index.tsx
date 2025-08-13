@@ -3,6 +3,7 @@ import AboutPage from '@/pages/AboutPage'
 import { Route, Routes } from 'react-router'
 import WrapperLayout from '@/layout/WrapperLayout'
 import EducationPage from '@/pages/EducationPage'
+import ContactPage from '@/pages/ContactPage'
 
 const APP_ROUTES = [
   {
@@ -16,6 +17,10 @@ const APP_ROUTES = [
   {
     to: '/education',
     element: <EducationPage />,
+  },
+  {
+    to: '/contact',
+    element: <ContactPage />,
   },
 ]
 

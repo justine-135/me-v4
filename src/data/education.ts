@@ -29,8 +29,6 @@ export const education_data = {
       date: '2016 - 2018',
       details: [
         'Built strong foundations in Computer Fundamentals, Basic Programming, and ICT applications relevant to engineering and technology fields.',
-        'Gained solid grounding in Physics (mechanics, electricity, magnetism, optics) with applied laboratory experiments.',
-        'Studied Chemistry and Biology, performing hands-on lab work to strengthen understanding of scientific principles.',
         'Learned advanced mathematics (Pre-Calculus, Calculus, Statistics & Probability) for analytical and problem-solving skills.',
         'Conducted STEM research projects integrating computer applications and scientific methodology to address real-world problems.',
         'Participated in collaborative experiments, technology-based presentations, and science fairs, enhancing both teamwork and technical communication skills.',
@@ -38,10 +36,7 @@ export const education_data = {
       badges: [
         'Computer Fundamentals',
         'Information and Communications Technology (ICT)',
-        'Laboratory Experimentation',
-        'Scientific Research',
         'Pre-Calculus',
-        'Calculus',
         'Statistics & Probability',
         'Problem-Solving Skills',
       ],
