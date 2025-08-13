@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router'
 import WrapperLayout from '@/layout/WrapperLayout'
 import EducationPage from '@/pages/EducationPage'
 import ContactPage from '@/pages/ContactPage'
+import WorksPage from '@/pages/WorksPage'
 
 const APP_ROUTES = [
   {
@@ -17,6 +18,10 @@ const APP_ROUTES = [
   {
     to: '/education',
     element: <EducationPage />,
+  },
+  {
+    to: '/works',
+    element: <WorksPage />,
   },
   {
     to: '/contact',

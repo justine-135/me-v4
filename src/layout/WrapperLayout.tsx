@@ -8,7 +8,7 @@ export default function WrapperLayout({ children }: { children: React.ReactNode 
     <Box pt="48px">
       <Header />
       <Sidebar />
-      <Box ml="24rem" p={4}>
+      <Box ml="20rem" p={4}>
         {children}
       </Box>
     </Box>

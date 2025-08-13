@@ -11,7 +11,7 @@ export default function Sidebar() {
     <Box
       position="fixed"
       h="100vh"
-      w="24rem"
+      w="20rem"
       px="2rem"
       background={background}
       borderRightWidth="1px"
