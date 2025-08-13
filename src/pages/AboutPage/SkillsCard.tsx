@@ -1,21 +1,19 @@
 import { Typography } from '@/components/Typography'
 import { SKILL_COLORS } from '@/constants/badge'
 import GridCard from '@/layout/GridCard'
+import type { ISkillCategory } from '@/types/About'
 import { Badge } from '@chakra-ui/react/badge'
 import { HStack, Stack } from '@chakra-ui/react/stack'
 
 interface ISkillsCardProps {
-  skills: {
-    title: string
-    items: string[]
-  }[]
+  skills?: ISkillCategory[]
 }
 
 export const SkillsCard = ({ skills }: ISkillsCardProps) => {
   return (
     <GridCard cardCustomProps={{ cardTitle: 'Skills', maxW: { mdToLg: 'full', md: 'sm' } }}>
       <Stack gap={4}>
-        {skills.map((skill) => {
+        {skills?.map((skill) => {
           return (
             <Stack key={skill.title}>
               <Typography variant="subheading">{skill.title}</Typography>

@@ -1,19 +1,13 @@
 import TimelineCustom from '@/components/TimelineCustom'
 import GridCard from '@/layout/GridCard'
+import type { IExperience } from '@/types/About'
 
 interface IExperienceCardProps {
-  experiences: {
-    title: string
-    subtitle: string
-    date: string
-    details: string[]
-    technologies: string[]
-    current: boolean
-  }[]
+  experiences?: IExperience[]
 }
 
 export const ExperienceCard = ({ experiences }: IExperienceCardProps) => {
-  const timelineData = experiences.map((experience) => {
+  const timelineData = experiences?.map((experience) => {
     const { technologies, ...rest } = experience
     return {
       ...rest,
@@ -23,7 +17,7 @@ export const ExperienceCard = ({ experiences }: IExperienceCardProps) => {
 
   return (
     <GridCard cardCustomProps={{ cardTitle: 'Experience' }}>
-      <TimelineCustom data={timelineData} />
+      <TimelineCustom data={timelineData || []} />
     </GridCard>
   )
 }

@@ -9,15 +9,15 @@ export const IntroductionCard = ({
   jobTitle,
   intros,
 }: {
-  name: string
-  jobTitle: string
-  intros: string[]
+  name?: string
+  jobTitle?: string
+  intros?: string[]
 }) => {
   return (
     <GridCard>
       <Stack gap={10}>
         <HStack gap={3}>
-          <AvatarCustom size="2xl" src={ProfileImg} fallback={name} />
+          <AvatarCustom size="2xl" src={ProfileImg} fallback={name || ''} />
           <Stack gap="0">
             <Typography variant="heading">{name}</Typography>
             <Typography>{jobTitle}</Typography>
@@ -25,7 +25,7 @@ export const IntroductionCard = ({
         </HStack>
         <Stack gap={2}>
           <Typography variant="subheading">About</Typography>
-          {intros.map((intro, idx) => {
+          {intros?.map((intro, idx) => {
             return <Typography key={idx}>{intro}</Typography>
           })}
         </Stack>
