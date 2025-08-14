@@ -1,6 +1,6 @@
+import CardCustom from '@/components/CardCustom'
 import { Typography } from '@/components/Typography'
 import { SKILL_COLORS } from '@/constants/badge'
-import GridCard from '@/layout/GridCard'
 import type { ISkillCategory } from '@/types/About'
 import { Badge } from '@chakra-ui/react/badge'
 import { HStack, Stack } from '@chakra-ui/react/stack'
@@ -11,7 +11,7 @@ interface ISkillsCardProps {
 
 export const SkillsCard = ({ skills }: ISkillsCardProps) => {
   return (
-    <GridCard cardCustomProps={{ cardTitle: 'Skills', maxW: { mdToLg: 'full', md: 'sm' } }}>
+    <CardCustom cardTitle="Skills">
       <Stack gap={4}>
         {skills?.map((skill) => {
           return (
@@ -31,6 +31,6 @@ export const SkillsCard = ({ skills }: ISkillsCardProps) => {
           )
         })}
       </Stack>
-    </GridCard>
+    </CardCustom>
   )
 }

@@ -1,10 +1,10 @@
 import { Typography } from '@/components/Typography'
-import GridCard from '@/layout/GridCard'
+import CardCustom from '@/components/CardCustom'
 
 export default function IntroductionCard({ intro }: { intro?: string }) {
   return (
-    <GridCard cardCustomProps={{ cardTitle: 'My works' }}>
+    <CardCustom cardTitle="My works">
       <Typography>{intro}</Typography>
-    </GridCard>
+    </CardCustom>
   )
 }

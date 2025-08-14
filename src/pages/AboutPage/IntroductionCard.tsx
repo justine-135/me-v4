@@ -1,7 +1,7 @@
 import { ProfileImg } from '@/assets'
 import AvatarCustom from '@/components/AvatarCustom'
+import CardCustom from '@/components/CardCustom'
 import { Typography } from '@/components/Typography'
-import GridCard from '@/layout/GridCard'
 import { HStack, Stack } from '@chakra-ui/react/stack'
 
 export const IntroductionCard = ({
@@ -14,7 +14,7 @@ export const IntroductionCard = ({
   intros?: string[]
 }) => {
   return (
-    <GridCard>
+    <CardCustom>
       <Stack gap={10}>
         <HStack gap={3}>
           <AvatarCustom size="2xl" src={ProfileImg} fallback={name || ''} />
@@ -30,6 +30,6 @@ export const IntroductionCard = ({
           })}
         </Stack>
       </Stack>
-    </GridCard>
+    </CardCustom>
   )
 }

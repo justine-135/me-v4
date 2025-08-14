@@ -1,5 +1,5 @@
+import CardCustom from '@/components/CardCustom'
 import TimelineCustom from '@/components/TimelineCustom'
-import GridCard from '@/layout/GridCard'
 import type { IExperience } from '@/types/About'
 
 interface IExperienceCardProps {
@@ -16,8 +16,8 @@ export const ExperienceCard = ({ experiences }: IExperienceCardProps) => {
   })
 
   return (
-    <GridCard cardCustomProps={{ cardTitle: 'Experience' }}>
+    <CardCustom cardTitle="Experience">
       <TimelineCustom data={timelineData || []} />
-    </GridCard>
+    </CardCustom>
   )
 }

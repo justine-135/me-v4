@@ -1,6 +1,6 @@
+import CardCustom from '@/components/CardCustom'
 import { Typography } from '@/components/Typography'
 import useThemeValues from '@/hooks/useThemeValues'
-import GridCard from '@/layout/GridCard'
 import { Box, HStack, Stack } from '@chakra-ui/react'
 import { Link } from '@chakra-ui/react'
 import { LuExternalLink } from 'react-icons/lu'
@@ -26,7 +26,7 @@ export default function LinksCard() {
   ]
 
   return (
-    <GridCard cardCustomProps={{ cardTitle: 'Get in touch', maxW: { mdToLg: 'full', md: 'sm' } }}>
+    <CardCustom cardTitle="Get in touch">
       <Stack>
         {socialLinks.map((social) => {
           const { icon, type, name, link, link_label } = social
@@ -52,6 +52,6 @@ export default function LinksCard() {
           )
         })}
       </Stack>
-    </GridCard>
+    </CardCustom>
   )
 }

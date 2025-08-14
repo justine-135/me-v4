@@ -7,6 +7,7 @@ import useSWR from 'swr'
 import { fetcher } from '@/util'
 import { EDUCATION_JSON_PATH } from '@/constants/paths'
 import type { IEducationData } from '@/types/Education'
+import StackLayout from '@/layout/StackLayout'
 
 export default function EducationPage() {
   const { data, error, isLoading } = useSWR<IEducationData>(EDUCATION_JSON_PATH, fetcher)
@@ -16,10 +17,14 @@ export default function EducationPage() {
 
   return (
     <PageLayout title="Education">
-      <IntroductionCard intro={data?.intro} />
-      <FormalEducationCard education={data?.education} />
-      <CurrentLearning skills={data?.hard_skills_learn} />
-      <DevelopmentSkillsCard skills={data?.soft_skills_learn} />
+      <StackLayout>
+        <IntroductionCard intro={data?.intro} />
+        <FormalEducationCard education={data?.education} />
+      </StackLayout>
+      <StackLayout flex={1}>
+        <CurrentLearning skills={data?.hard_skills_learn} />
+        <DevelopmentSkillsCard skills={data?.soft_skills_learn} />
+      </StackLayout>
     </PageLayout>
   )
 }

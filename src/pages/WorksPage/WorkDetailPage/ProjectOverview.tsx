@@ -1,4 +1,4 @@
-import GridCard from '@/layout/GridCard'
+import CardCustom from '@/components/CardCustom'
 import { DataList, HStack } from '@chakra-ui/react'
 
 const DataCard = ({ label, value }: { label?: string; value?: string }) => {
@@ -19,11 +19,11 @@ interface IProjectOverview {
 
 export default function ProjectOverview({ problem, answer }: IProjectOverview) {
   return (
-    <GridCard cardCustomProps={{ cardTitle: 'Project overview', maxW: 'sm' }}>
+    <CardCustom cardTitle="Project overview">
       <HStack>
         <DataCard label="Problem" value={problem} />
         <DataCard label="Solution" value={answer} />
       </HStack>
-    </GridCard>
+    </CardCustom>
   )
 }

@@ -1,5 +1,5 @@
+import CardCustom from '@/components/CardCustom'
 import TimelineCustom from '@/components/TimelineCustom'
-import GridCard from '@/layout/GridCard'
 import type { IEducationItem } from '@/types/Education'
 
 interface IFormalEducationCard {
@@ -8,8 +8,8 @@ interface IFormalEducationCard {
 
 export default function FormalEducationCard({ education }: IFormalEducationCard) {
   return (
-    <GridCard cardCustomProps={{ cardTitle: 'Formal education' }}>
+    <CardCustom cardTitle="Formal education">
       <TimelineCustom data={education || []} />
-    </GridCard>
+    </CardCustom>
   )
 }

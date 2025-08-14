@@ -1,10 +1,10 @@
 import { Typography } from '@/components/Typography'
-import GridCard from '@/layout/GridCard'
+import CardCustom from '@/components/CardCustom'
 import { Badge, Stack } from '@chakra-ui/react'
 
 export default function IntroductionCard() {
   return (
-    <GridCard
+    <CardCustom
       cardCustomProps={{ cardTitle: <Badge colorPalette="green">Available for work</Badge> }}
     >
       <Stack gap={2}>
@@ -14,6 +14,6 @@ export default function IntroductionCard() {
           let's discuss how I can contribute to your business.
         </Typography>
       </Stack>
-    </GridCard>
+    </CardCustom>
   )
 }

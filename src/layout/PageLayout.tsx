@@ -1,8 +1,8 @@
 import { Typography } from '@/components/Typography'
 import { Stack } from '@chakra-ui/react/stack'
 import type React from 'react'
-import { Button, type BoxProps } from '@chakra-ui/react'
-import GridBoxLayout from './GridBoxLayout'
+import { Button, type FlexProps } from '@chakra-ui/react'
+import FlexboxLayout from './FlexLayout'
 import { useNavigate } from 'react-router'
 import { BsArrowLeft } from 'react-icons/bs'
 import useThemeValues from '@/hooks/useThemeValues'
@@ -26,14 +26,14 @@ const BackButton = () => {
 interface IPageLayoutProps {
   title?: string
   children: React.ReactNode
-  gridBoxLayoutProps?: BoxProps
+  flexboxLayoutProps?: FlexProps
   showBackBtn?: boolean
 }
 
 export default function PageLayout({
   title,
   children,
-  gridBoxLayoutProps,
+  flexboxLayoutProps,
   showBackBtn = false,
 }: IPageLayoutProps) {
   return (
@@ -42,7 +42,7 @@ export default function PageLayout({
         {showBackBtn && <BackButton />}
         {title && <Typography variant="heading">{title}</Typography>}
       </Stack>
-      <GridBoxLayout {...gridBoxLayoutProps}>{children}</GridBoxLayout>
+      <FlexboxLayout {...flexboxLayoutProps}>{children}</FlexboxLayout>
     </Stack>
   )
 }

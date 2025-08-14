@@ -1,6 +1,6 @@
 import { Typography } from '@/components/Typography'
 import { SKILL_COLORS } from '@/constants/badge'
-import GridCard from '@/layout/GridCard'
+import CardCustom from '@/components/CardCustom'
 import type { IProjects } from '@/types/Works'
 import { Badge, Box, Button, Card, HStack, Image, Stack } from '@chakra-ui/react'
 import { useLocation, useNavigate } from 'react-router'
@@ -22,7 +22,7 @@ const ViewMoreBtn = ({ id }: { id: number }) => {
 
 export default function FeaturedProjectsCard({ projects }: IFeaturedProjectsCardProps) {
   return (
-    <GridCard cardCustomProps={{ cardTitle: 'Featured projects' }}>
+    <CardCustom cardTitle="Featured projects">
       <Typography>In-depth review of my work and design process.</Typography>
       <Stack mt={4} gap={2}>
         {projects?.map((project) => {
@@ -60,6 +60,6 @@ export default function FeaturedProjectsCard({ projects }: IFeaturedProjectsCard
           )
         })}
       </Stack>
-    </GridCard>
+    </CardCustom>
   )
 }

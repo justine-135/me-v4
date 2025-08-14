@@ -1,9 +1,9 @@
-import GridCard from '@/layout/GridCard'
+import CardCustom from '@/components/CardCustom'
 import { Button, Field, Fieldset, Input, Stack, Textarea } from '@chakra-ui/react'
 
 export const FormCard = () => {
   return (
-    <GridCard cardCustomProps={{ cardTitle: 'Contact details' }}>
+    <CardCustom cardCustomProps={{ cardTitle: 'Contact details' }}>
       <Fieldset.Root>
         <Stack>
           <Fieldset.HelperText>Please provide your contact details below.</Fieldset.HelperText>
@@ -29,6 +29,6 @@ export const FormCard = () => {
           Submit
         </Button>
       </Fieldset.Root>
-    </GridCard>
+    </CardCustom>
   )
 }

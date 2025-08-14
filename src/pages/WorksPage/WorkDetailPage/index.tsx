@@ -6,9 +6,10 @@ import useSWR from 'swr'
 import RoleDuration from './RoleDuration'
 import IntroductionCard from './IntroductionCard'
 import { Stack } from '@chakra-ui/react'
-import GridBoxLayout from '@/layout/GridBoxLayout'
+import FlexboxLayout from '@/layout/FlexLayout'
 import ProjectVisualsCard from './ProjectVisualsCard'
 import ProjectOverview from './ProjectOverview'
+import StackLayout from '@/layout/StackLayout'
 
 export default function WorkDetailPage() {
   const param = useParams()
@@ -21,9 +22,9 @@ export default function WorkDetailPage() {
   console.log(data)
 
   return (
-    <PageLayout showBackBtn gridBoxLayoutProps={{ columnCount: 1 }}>
+    <PageLayout showBackBtn>
       <Stack gap={6}>
-        <GridBoxLayout columnCount={1} w="87%">
+        <StackLayout>
           <IntroductionCard title={data?.title} description={data?.description} />
           <RoleDuration
             duration={data?.duration}
@@ -31,11 +32,13 @@ export default function WorkDetailPage() {
             role={data?.role}
             projectType={data?.project_type}
           />
-        </GridBoxLayout>
-        <GridBoxLayout columnCount={{ mdToLg: 1, md: 2 }}>
-          <ProjectVisualsCard imageUrls={data?.image_urls} />
-          <ProjectOverview problem={data?.problem} answer={data?.answer} />
-        </GridBoxLayout>
+        </StackLayout>
+        <FlexboxLayout>
+          <StackLayout>
+            <ProjectVisualsCard imageUrls={data?.image_urls} />
+            <ProjectOverview problem={data?.problem} answer={data?.answer} />
+          </StackLayout>
+        </FlexboxLayout>
       </Stack>
     </PageLayout>
   )

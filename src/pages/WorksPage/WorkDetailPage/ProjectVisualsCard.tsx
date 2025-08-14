@@ -1,5 +1,5 @@
 import { Typography } from '@/components/Typography'
-import GridCard from '@/layout/GridCard'
+import CardCustom from '@/components/CardCustom'
 import {
   Image,
   Dialog,
@@ -49,7 +49,7 @@ const Thumbnail = ({ src }: { src: string }) => {
 
 export default function ProjectVisualsCard({ imageUrls }: IProjectVisualsCardProps) {
   return (
-    <GridCard cardCustomProps={{ cardTitle: 'Project visuals', flexGrow: '1' }}>
+    <CardCustom cardTitle="Project visuals">
       <Stack gap={4}>
         <Typography>Key screens and design solutions</Typography>
         <Box>
@@ -60,6 +60,6 @@ export default function ProjectVisualsCard({ imageUrls }: IProjectVisualsCardPro
           </HStack>
         </Box>
       </Stack>
-    </GridCard>
+    </CardCustom>
   )
 }

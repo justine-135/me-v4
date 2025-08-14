@@ -1,10 +1,10 @@
 import { Typography } from '@/components/Typography'
-import GridCard from '@/layout/GridCard'
+import CardCustom from '@/components/CardCustom'
 import { Stack } from '@chakra-ui/react'
 
 export default function LocationCard() {
   return (
-    <GridCard
+    <CardCustom
       cardCustomProps={{ cardTitle: 'Location & Time', maxW: { mdToLg: 'full', md: 'sm' } }}
     >
       <Stack>
@@ -12,6 +12,6 @@ export default function LocationCard() {
         <Typography>🕐 PHT (UTC+8)</Typography>
         <Typography>💼 Available for remote & local projects</Typography>
       </Stack>
-    </GridCard>
+    </CardCustom>
   )
 }

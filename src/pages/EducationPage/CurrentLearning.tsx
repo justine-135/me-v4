@@ -1,9 +1,9 @@
 import { Typography } from '@/components/Typography'
 import useThemeValues from '@/hooks/useThemeValues'
-import GridCard from '@/layout/GridCard'
 import { Stack } from '@chakra-ui/react/stack'
 import { Box } from '@chakra-ui/react/box'
 import type { IHardSkill } from '@/types/Education'
+import CardCustom from '@/components/CardCustom'
 
 interface ICurrentLearningProps {
   skills?: IHardSkill[]
@@ -12,9 +12,7 @@ export default function CurrentLearning({ skills }: ICurrentLearningProps) {
   const { backgroundAccent } = useThemeValues()
 
   return (
-    <GridCard
-      cardCustomProps={{ cardTitle: 'Currently learning', maxW: { mdToLg: 'full', md: 'sm' } }}
-    >
+    <CardCustom cardTitle="Currently learning">
       <Stack gap={4}>
         {skills?.map((skill, idx) => {
           const { title, description } = skill
@@ -31,6 +29,6 @@ export default function CurrentLearning({ skills }: ICurrentLearningProps) {
           )
         })}
       </Stack>
-    </GridCard>
+    </CardCustom>
   )
 }
