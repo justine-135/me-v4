@@ -1,21 +1,21 @@
 import { WORKS_JSON_PATH } from '@/constants/paths'
 import PageLayout from '@/layout/PageLayout'
 import { fetcher } from '@/util'
-import { Image } from '@chakra-ui/react'
 import useSWR from 'swr'
+import IntroductionCard from './components/IntroductionCard'
+import type { IWorksData } from '@/types/Works'
+import FeaturedProjectsCard from './components/FeaturedProjectsCard'
 
 export default function WorksPage() {
-  const { data, error, isLoading } = useSWR(WORKS_JSON_PATH, fetcher)
+  const { data, error, isLoading } = useSWR<IWorksData>(WORKS_JSON_PATH, fetcher)
 
   if (isLoading) return <p>Loading...</p>
   if (error) return <p>Failed to load data</p>
 
-  console.log(data)
-
   return (
-    <PageLayout title="Works">
-      asd
-      <Image rounded="md" src={data.featured_projects[0].image} alt="Dan Abramov" />
+    <PageLayout title="Works" gridBoxLayoutProps={{ columnCount: 1 }}>
+      <IntroductionCard intro={data?.intro} />
+      <FeaturedProjectsCard projects={data?.featured_projects} />
     </PageLayout>
   )
 }

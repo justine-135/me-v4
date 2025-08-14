@@ -1,0 +1,32 @@
+{
+  "title": "Restaurant Ordering System",
+  "description": "Most restaurants had inefficient customer service, as researchers found. Calling customers by name or number, though it may work in small places, could slow things down and get confusing. This might be okay for small eateries, but as businesses grow, manual monitoring could become a problem.",
+  "problem": "When helping clients in a busy and chaotic place, staff faced understandable challenges. Manual work took too long and got stressful as more customers came in, so it wasn't a viable solution. Customers got frustrated because it was hard to grab staff attention for help. If tables weren't cleared, customers waited longer, creating an ongoing delay.",
+  "answer": "To address the issue, researchers suggested a Restaurant Ordering System. This system would track occupied tables, bills, customer needs, and finished meals, reducing the need for physical monitoring. This allowed staff to focus on tasks and avoid distractions.",
+  "image_urls": [
+    "/images/student_record_system/accounts_2.gif",
+    "/images/student_record_system/accounts.gif",
+    "/images/student_record_system/all.png",
+    "/images/student_record_system/enrolled.png",
+    "/images/student_record_system/enrollment_2.gif",
+    "/images/student_record_system/enrollment_3.gif",
+    "/images/student_record_system/enrollment.gif",
+    "/images/student_record_system/grading.gif",
+    "/images/student_record_system/home.gif",
+    "/images/student_record_system/login.png",
+    "/images/student_record_system/operations.gif",
+    "/images/student_record_system/promotion.gif",
+    "/images/student_record_system/students_2.gif",
+    "/images/student_record_system/students.gif"
+  ],
+  "duration": "3 months",
+  "timeline": "2022-2023",
+  "role": "Lead developer",
+  "future_improvements": [
+    "Mobile App Integration – Allow customers to place orders via a mobile app.",
+    "Customer Feedback System – Gather and analyze customer reviews.",
+    "Data Analytics & Reports – Generate insights into sales, popular items, and staff performance."
+  ],
+  "people": ["Daryl Magpantay", "Richard Manipon", "James Ferrer", "Louise Yagi"],
+  "project_type": "Web Application"
+}

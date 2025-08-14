@@ -1,0 +1,38 @@
+{
+  "intro": "A collection of my design work including featured projects with detailed case studies and side projects that showcase my exploration and learning journey.",
+  "featured_projects": [
+    {
+      "id": 1,
+      "title": "Restaurant Ordering System",
+      "image": "/images/research_project/header.jpg",
+      "description": "With its user-friendly interface and efficient order management, the samgyupsal ordering system web app enhances customer satisfaction and helps restaurant owners optimize their operations for a smoother and more delightful dining experience.",
+      "is_featured": true,
+      "date": "2023-03-27",
+      "tags": ["bootstrap", "php", "javascript", "css", "mysql"],
+      "link_url": "https://github.com/justine-135/dadz-grill-thesis",
+      "detail_url": "/1"
+    },
+    {
+      "id": 2,
+      "title": "Motion Capture System",
+      "image": "/images/motion_capture/header.jpg",
+      "description": "The NextJS-based frontend offers a user-friendly interface for easy access and control of motion capture functionality, while the NodeJS backend manages data processing, storage, and communication with the Python-based camera module.",
+      "is_featured": true,
+      "date": "2023-01-16",
+      "tags": ["nextjs", "python", "nodejs", "mysql"],
+      "link_url": "https://github.com/justine-135/cpet17-finals",
+      "detail_url": "/2"
+    },
+    {
+      "id": 3,
+      "title": "Student Record Management System",
+      "image": "/images/student_record_system/header.jpg",
+      "description": "Platform designed to securely store, manage, and organize student-related information and data, including academic records, grades, and personal details.",
+      "is_featured": true,
+      "date": "2022-08-09",
+      "tags": ["html", "css", "php", "javascript", "mysql"],
+      "link_url": "https://github.com/justine-135/School-record-management-system",
+      "detail_url": "/3"
+    }
+  ]
+}
