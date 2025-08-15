@@ -6,10 +6,11 @@ export interface IProjects {
   is_featured: boolean
   tags: string[]
   project_type: string
-  role: string
+  role?: string
   link_url: string
-  duration: string
+  duration?: string
   timeline: string
+  live_url?: string
 }
 
 export interface IWorksData {

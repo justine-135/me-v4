@@ -39,6 +39,90 @@
       "role": "Full stack developer",
       "duration": "3 months",
       "timeline": "2022-2023"
+    },
+    {
+      "id": 4,
+      "title": "Interactive pricing component",
+      "image": "/images/sides/interactive_components.png",
+      "description": "A platform for safely storing and organizing student information, including grades, academic records, and personal details.",
+      "is_featured": false,
+      "tags": ["reactjs", "sass"],
+      "project_type": "Learning challenge",
+      "timeline": "2023",
+      "link_url": "https://github.com/justine-135/interactive-pricing-component",
+      "live_url": "https://justine-135.github.io/interactive-pricing-component/"
+    },
+    {
+      "id": 5,
+      "title": "IP address tracker",
+      "image": "/images/sides/ip_address_tracker.png",
+      "description": "Show map geolocation by searching IP address using leaflet, and IP geolocation API.",
+      "is_featured": false,
+      "tags": ["reactjs", "api", "sass"],
+      "project_type": "Learning challenge",
+      "timeline": "2023",
+      "link_url": "https://github.com/justine-135/ip-address-tracker",
+      "live_url": "https://justine-135.github.io/ip-address-tracker/"
+    },
+    {
+      "id": 6,
+      "title": "Static job listings",
+      "image": "/images/sides/static_job_listing.png",
+      "description": "Using JavaScript to filter out jobs based on selected categories. Provided a local JSON file to help practice working with JSON data.",
+      "is_featured": false,
+      "tags": ["reactjs", "tailwindcss"],
+      "project_type": "Learning challenge",
+      "timeline": "2023",
+      "link_url": "https://github.com/justine-135/static-job-listings",
+      "live_url": "https://justine-135.github.io/static-job-listings/"
+    },
+    {
+      "id": 7,
+      "title": "Bookmark",
+      "image": "/images/sides/bookmark.png",
+      "description": "A frontend mentor challenge that test layout skills. There are also areas that will require some JavaScript, such as the tabbed features section and the FAQ accordion.",
+      "is_featured": false,
+      "tags": ["reactjs", "sass"],
+      "project_type": "Learning challenge",
+      "timeline": "2021",
+      "link_url": "https://github.com/justine-135/Bookmark",
+      "live_url": "https://justine-135.github.io/Bookmark/"
+    },
+    {
+      "id": 8,
+      "title": "Todo",
+      "image": "/images/sides/todo.png",
+      "description": "Intermediate frontend mentor challange. Todo list with filter data functionality and animation.",
+      "is_featured": false,
+      "tags": ["reactjs", "sass"],
+      "project_type": "Learning challenge",
+      "timeline": "2021",
+      "link_url": "https://github.com/justine-135/Todo",
+      "live_url": "https://justine-135.github.io/Todo/"
+    },
+    {
+      "id": 9,
+      "title": "Todo list with Dnd",
+      "image": "/images/sides/todo_dnd.png",
+      "description": "React to do list with drag and drop functionality. Used react-beautiful-dnd to enable drag and drop todo items, and column.",
+      "is_featured": false,
+      "tags": ["reactjs", "styled-components"],
+      "project_type": "Side project",
+      "timeline": "2023",
+      "link_url": "https://github.com/justine-135/react-todo-dnd",
+      "live_url": "https://justine-135.github.io/react-todo-dnd/"
+    },
+    {
+      "id": 10,
+      "title": "Maze game",
+      "image": "/images/sides/maze-game.png",
+      "description": "My own scary maze game to try out with friends. The idea and concept was based on the popular maze game.",
+      "is_featured": false,
+      "tags": ["html", "css", "javascript"],
+      "project_type": "Side project",
+      "timeline": "2021",
+      "link_url": "https://github.com/justine-135/maze-game",
+      "live_url": "https://justine-135.github.io/maze-game/"
     }
   ]
 }

@@ -23,9 +23,9 @@ export default function ProcessCard({ processes }: IProcessCardProps) {
                 <Stack>
                   <Typography variant="subheading">{title}</Typography>
                   <List.Root mt={2} gap={2}>
-                    {details?.map((detail) => {
+                    {details?.map((detail, idx) => {
                       return (
-                        <List.Item>
+                        <List.Item key={idx}>
                           <Typography>{detail}</Typography>
                         </List.Item>
                       )

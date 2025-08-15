@@ -15,11 +15,6 @@
   "duration": "3 months",
   "timeline": "2023",
   "role": "Full stack developer",
-  "future_improvements": [
-    "Mobile App Integration – Allow customers to place orders via a mobile app.",
-    "Customer Feedback System – Gather and analyze customer reviews.",
-    "Data Analytics & Reports – Generate insights into sales, popular items, and staff performance."
-  ],
   "people": ["Daryl Magpantay"],
   "project_type": "Training project",
   "functions": [

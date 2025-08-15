@@ -14,16 +14,16 @@ import TeamCard from './components/TeamCard'
 import FunctionalitiesCard from './components/FunctionalitiesCard'
 import ImprovementsCard from './components/ImprovementsCard'
 import ProcessCard from './components/ProcessCard'
+import { useScrollToTop } from '@/hooks/useScrollToTop'
 
 export default function WorkDetailPage() {
   const param = useParams()
   const { id } = param
   const { data, error, isLoading } = useSWR<IWorkDetail>(`/data/work-${id}.json`, fetcher)
+  useScrollToTop()
 
   if (isLoading) return <p>Loading...</p>
   if (error) return <p>Failed to load data</p>
-
-  console.log(data)
 
   return (
     <PageLayout showBackBtn>
