@@ -1,25 +1,17 @@
+import LinkButton from '@/components/Button/LinkButton'
 import CardCustom from '@/components/CardCustom'
 import { Typography } from '@/components/Typography'
 import { SKILL_COLORS } from '@/constants/badge'
 import type { IProjects } from '@/types/Works'
-import { Badge, Box, Button, HStack, Link, Stack } from '@chakra-ui/react'
+import { Badge, Box, HStack, Stack } from '@chakra-ui/react'
 import { BsDot } from 'react-icons/bs'
 import { FaGithub } from 'react-icons/fa'
-import { useLocation, useNavigate } from 'react-router'
+import { useLocation } from 'react-router'
 
-const ViewMoreBtn = ({ id }: { id: number }) => {
-  const navigate = useNavigate()
+const ReadMoreButton = ({ id }: { id: number }) => {
   const location = useLocation()
 
-  const handleNavigate = () => {
-    navigate(`${location.pathname}/${id}`)
-  }
-
-  return (
-    <Button onClick={handleNavigate} size="sm">
-      Read more
-    </Button>
-  )
+  return <LinkButton to={`${location.pathname}/${id}`}>Read more</LinkButton>
 }
 
 interface IFeaturedProjectsCardProps {
@@ -68,11 +60,16 @@ export default function FeaturedProjectsCard({ projects }: IFeaturedProjectsCard
                       )
                     })}
                   </HStack>
-                  <HStack gap={6}>
-                    <ViewMoreBtn id={project.id} />
-                    <Link href={project.link_url} target="_blank">
-                      <Typography>See code</Typography> <FaGithub />
-                    </Link>
+                  <HStack gap={2}>
+                    <ReadMoreButton id={project.id} />
+                    <LinkButton
+                      to={project.link_url}
+                      buttonProps={{ variant: 'outline' }}
+                      target="_blank"
+                    >
+                      See code
+                      <FaGithub />
+                    </LinkButton>
                   </HStack>
                 </Stack>
               </CardCustom>

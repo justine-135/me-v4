@@ -1,8 +1,8 @@
+import LinkButton from '@/components/Button/LinkButton'
 import CardCustom from '@/components/CardCustom'
 import { Typography } from '@/components/Typography'
 import useThemeValues from '@/hooks/useThemeValues'
 import { Box, HStack, Stack } from '@chakra-ui/react'
-import { Link } from '@chakra-ui/react'
 import { LuExternalLink } from 'react-icons/lu'
 
 export default function LinksCard() {
@@ -41,10 +41,10 @@ export default function LinksCard() {
                   <Box>
                     <Typography>{name}</Typography>
                   </Box>
-                  <Box mt={1}>
-                    <Link href={link} target="_blank">
-                      <Typography>{link_label}</Typography> <LuExternalLink />
-                    </Link>
+                  <Box mt={2}>
+                    <LinkButton to={link} target="_blank">
+                      {link_label} <LuExternalLink />
+                    </LinkButton>
                   </Box>
                 </Stack>
               </HStack>

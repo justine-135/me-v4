@@ -1,7 +1,9 @@
+import LinkButton from '@/components/Button/LinkButton'
 import CardCustom from '@/components/CardCustom'
 import { Typography } from '@/components/Typography'
 import type { IProjects } from '@/types/Works'
 import { Badge, Box, Grid, GridItem, HStack, Stack } from '@chakra-ui/react'
+import { FaGithub } from 'react-icons/fa'
 
 interface ISideProjectsProps {
   projects?: IProjects[]
@@ -31,6 +33,25 @@ export default function SideProjects({ projects }: ISideProjectsProps) {
                     {project.title}
                   </Typography>
                   <Typography>{project.description}</Typography>
+                  <HStack>
+                    {project.live_url && (
+                      <LinkButton
+                        to={project.live_url}
+                        buttonProps={{ size: 'sm' }}
+                        target="_blank"
+                      >
+                        View live
+                      </LinkButton>
+                    )}
+                    <LinkButton
+                      to={project.link_url}
+                      buttonProps={{ size: 'sm', variant: 'outline' }}
+                      target="_blank"
+                    >
+                      See code
+                      <FaGithub />
+                    </LinkButton>
+                  </HStack>
                 </Stack>
               </CardCustom>
             </GridItem>

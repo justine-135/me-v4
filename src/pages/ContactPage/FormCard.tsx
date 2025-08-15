@@ -3,7 +3,7 @@ import { Button, Field, Fieldset, Input, Stack, Textarea } from '@chakra-ui/reac
 
 export const FormCard = () => {
   return (
-    <CardCustom cardCustomProps={{ cardTitle: 'Contact details' }}>
+    <CardCustom cardTitle="Contact details">
       <Fieldset.Root>
         <Stack>
           <Fieldset.HelperText>Please provide your contact details below.</Fieldset.HelperText>

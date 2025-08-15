@@ -4,9 +4,7 @@ import { Badge, Stack } from '@chakra-ui/react'
 
 export default function IntroductionCard() {
   return (
-    <CardCustom
-      cardCustomProps={{ cardTitle: <Badge colorPalette="green">Available for work</Badge> }}
-    >
+    <CardCustom cardTitle={<Badge colorPalette="green">Available for work</Badge>}>
       <Stack gap={2}>
         <Typography variant="heading">Let's work together</Typography>
         <Typography>
