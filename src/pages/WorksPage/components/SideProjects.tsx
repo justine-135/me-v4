@@ -2,7 +2,7 @@ import LinkButton from '@/components/Button/LinkButton'
 import CardCustom from '@/components/CardCustom'
 import { Typography } from '@/components/Typography'
 import type { IProjects } from '@/types/Works'
-import { Badge, Box, Grid, GridItem, HStack, Stack } from '@chakra-ui/react'
+import { Badge, Box, Flex, Grid, GridItem, HStack } from '@chakra-ui/react'
 import { FaGithub } from 'react-icons/fa'
 
 interface ISideProjectsProps {
@@ -23,8 +23,8 @@ export default function SideProjects({ projects }: ISideProjectsProps) {
         {projects?.map((project) => {
           return (
             <GridItem key={project.id} h="100%">
-              <CardCustom imageProps={{ src: project.image }} h="100%">
-                <Stack gap={4}>
+              <CardCustom imageProps={{ src: project.image }} h="full">
+                <Flex flexDirection="column" gap={4} h="full">
                   <HStack justifyContent="space-between">
                     <Badge variant="outline">{project.project_type}</Badge>
                     <Badge variant="outline">{project.timeline}</Badge>
@@ -33,7 +33,7 @@ export default function SideProjects({ projects }: ISideProjectsProps) {
                     {project.title}
                   </Typography>
                   <Typography>{project.description}</Typography>
-                  <HStack>
+                  <HStack mt="auto">
                     {project.live_url && (
                       <LinkButton
                         to={project.live_url}
@@ -52,7 +52,7 @@ export default function SideProjects({ projects }: ISideProjectsProps) {
                       <FaGithub />
                     </LinkButton>
                   </HStack>
-                </Stack>
+                </Flex>
               </CardCustom>
             </GridItem>
           )

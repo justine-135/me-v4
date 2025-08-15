@@ -4,7 +4,7 @@
     {
       "id": 1,
       "title": "Restaurant Ordering System",
-      "image": "/images/research_project/header.jpg",
+      "image": "/images/research_project/group_4.jpg",
       "description": "A web app that lets customers place orders easily and helps restaurant owners manage them efficiently. It can also track table occupancy using connected hardware, with the data viewable through the web app for better monitoring and service.",
       "is_featured": true,
       "tags": ["bootstrap", "php", "javascript", "css", "mysql"],

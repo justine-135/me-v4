@@ -33,6 +33,7 @@ export default function FeaturedProjectsCard({ projects }: IFeaturedProjectsCard
           return (
             <Box key={project.id}>
               <CardCustom
+                h="275px"
                 imageProps={{ src: project.image, w: '300px', h: 'full' }}
                 flexDirection="row"
               >
@@ -60,7 +61,7 @@ export default function FeaturedProjectsCard({ projects }: IFeaturedProjectsCard
                       )
                     })}
                   </HStack>
-                  <HStack gap={2}>
+                  <HStack gap={2} mt="auto">
                     <ReadMoreButton id={project.id} />
                     <LinkButton
                       to={project.link_url}

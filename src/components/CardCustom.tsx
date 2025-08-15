@@ -30,7 +30,7 @@ export default function CardCustom({
         </Card.Header>
       )}
       {imageProps?.src && (
-        <Box overflow="hidden">
+        <Box overflow="hidden" rounded="md">
           <Image
             h={180}
             alt="Project image"
@@ -42,9 +42,11 @@ export default function CardCustom({
           />
         </Box>
       )}
-      <Card.Body pt={!cardTitle ? '0rem' : '4rem'} p={4} {...cardBodyProps}>
-        {children}
-      </Card.Body>
+      {children && (
+        <Card.Body pt={!cardTitle ? '0rem' : '4rem'} p={4} {...cardBodyProps}>
+          {children}
+        </Card.Body>
+      )}
     </Card.Root>
   )
 }

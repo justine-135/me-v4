@@ -22,14 +22,16 @@ export default function ProcessCard({ processes }: IProcessCardProps) {
                 </Badge>
                 <Stack>
                   <Typography variant="subheading">{title}</Typography>
-                  <List.Root mt={2} gap={2}>
-                    {details?.map((detail, idx) => {
-                      return (
-                        <List.Item key={idx}>
-                          <Typography>{detail}</Typography>
-                        </List.Item>
-                      )
-                    })}
+                  <List.Root mt={2}>
+                    <Box columnCount={2} spaceY={4}>
+                      {details?.map((detail, idx) => {
+                        return (
+                          <List.Item key={idx}>
+                            <Typography>{detail}</Typography>
+                          </List.Item>
+                        )
+                      })}
+                    </Box>
                   </List.Root>
                 </Stack>
               </HStack>

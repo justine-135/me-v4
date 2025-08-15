@@ -8,8 +8,12 @@ import {
   VStack,
   Stack,
   Box,
-  HStack,
+  Grid,
+  GridItem,
+  Button,
 } from '@chakra-ui/react'
+import { useState } from 'react'
+import { BsEye } from 'react-icons/bs'
 
 interface IProjectVisualsCardProps {
   imageUrls?: string[]
@@ -24,8 +28,8 @@ const Thumbnail = ({ src }: { src: string }) => {
         <Dialog.Backdrop onClick={onToggle} />
         <Dialog.Positioner>
           <Dialog.Content bg="transparent" shadow="none">
-            <Dialog.CloseTrigger top="0" insetEnd="-12" asChild onClick={onToggle}>
-              <CloseButton bg="bg" size="sm" />
+            <Dialog.CloseTrigger top="0" insetEnd="-12" asChild onClick={onToggle} bg="transparent">
+              <CloseButton bg="bg" size="sm" color="white" />
             </Dialog.CloseTrigger>
             <Dialog.Body p={0}>
               <VStack>
@@ -35,15 +39,49 @@ const Thumbnail = ({ src }: { src: string }) => {
           </Dialog.Content>
         </Dialog.Positioner>
       </Dialog.Root>
-      <Image
+      <CardCustom
+        imageProps={{ src }}
         onClick={onToggle}
-        src={src}
-        h={100}
-        w={250}
-        rounded="md"
         _hover={{ cursor: 'pointer' }}
+        h="100px"
+        flex="1fr"
       />
     </>
+  )
+}
+
+const SHOW_LIMIT = 3
+
+const ImagesGrid = ({ imageUrls }: IProjectVisualsCardProps) => {
+  const [limit, setLimit] = useState<number>(3)
+
+  const limitedImageUrls = imageUrls?.slice(0, limit) ?? []
+  const subtractedValue = (imageUrls?.length ?? 0) - limit
+  const leftOverImages = Math.max((imageUrls?.length ?? 0) - limit, 0)
+
+  const handleButtonClick = () => {
+    setLimit((prevLimit) => prevLimit + SHOW_LIMIT)
+  }
+
+  return (
+    <VStack>
+      <Box>
+        <Grid templateColumns="repeat(3, 1fr)" gap={2}>
+          {limitedImageUrls?.map((imageUrl, idx) => {
+            return (
+              <GridItem key={idx}>
+                <Thumbnail src={imageUrl} />
+              </GridItem>
+            )
+          })}
+        </Grid>
+      </Box>
+      {subtractedValue > 0 && (
+        <Button onClick={handleButtonClick} size="xs">
+          <BsEye /> View more visuals ({leftOverImages})
+        </Button>
+      )}
+    </VStack>
   )
 }
 
@@ -52,13 +90,7 @@ export default function ProjectVisualsCard({ imageUrls }: IProjectVisualsCardPro
     <CardCustom cardTitle="Project visuals" as="section">
       <Stack gap={4}>
         <Typography>Key screens and design solutions</Typography>
-        <Box>
-          <HStack overflow="auto" p={4}>
-            {imageUrls?.map((imageUrl, idx) => {
-              return <Thumbnail src={imageUrl} key={idx} />
-            })}
-          </HStack>
-        </Box>
+        <ImagesGrid imageUrls={imageUrls} />
       </Stack>
     </CardCustom>
   )
