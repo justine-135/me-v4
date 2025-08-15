@@ -1,0 +1,15 @@
+{
+  "title": "Motion Capture System",
+  "description": "We developed a motion capture app using Python and NextJS for our final project in our subject Embedded Systems. We used Python with packages to enable movement sensing during oncam and call an API to record the start time, end time, and the captured image as BLOB file. To authenticate users to the web system, we used the NextAuth package and bcrypt to hash passwords to the database.",
+  "image_urls": ["/images/motion_capture/login.gif", "/images/motion_capture/home.gif"],
+  "duration": "3 months",
+  "timeline": "2023",
+  "role": "Lead developer",
+  "future_improvements": [
+    "Mobile App Integration – Allow customers to place orders via a mobile app.",
+    "Customer Feedback System – Gather and analyze customer reviews.",
+    "Data Analytics & Reports – Generate insights into sales, popular items, and staff performance."
+  ],
+  "people": ["Daryl Magpantay", "Richard Manipon", "James Ferrer", "Louise Yagi"],
+  "project_type": "Course project"
+}

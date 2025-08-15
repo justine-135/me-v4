@@ -4,20 +4,16 @@
   "problem": "When helping clients in a busy and chaotic place, staff faced understandable challenges. Manual work took too long and got stressful as more customers came in, so it wasn't a viable solution. Customers got frustrated because it was hard to grab staff attention for help. If tables weren't cleared, customers waited longer, creating an ongoing delay.",
   "answer": "To address the issue, researchers suggested a Restaurant Ordering System. This system would track occupied tables, bills, customer needs, and finished meals, reducing the need for physical monitoring. This allowed staff to focus on tasks and avoid distractions.",
   "image_urls": [
-    "/images/student_record_system/accounts_2.gif",
-    "/images/student_record_system/accounts.gif",
-    "/images/student_record_system/all.png",
-    "/images/student_record_system/enrolled.png",
-    "/images/student_record_system/enrollment_2.gif",
-    "/images/student_record_system/enrollment_3.gif",
-    "/images/student_record_system/enrollment.gif",
-    "/images/student_record_system/grading.gif",
-    "/images/student_record_system/home.gif",
-    "/images/student_record_system/login.png",
-    "/images/student_record_system/operations.gif",
-    "/images/student_record_system/promotion.gif",
-    "/images/student_record_system/students_2.gif",
-    "/images/student_record_system/students.gif"
+    "/images/research_project/login.png",
+    "/images/research_project/dashboard.png",
+    "/images/research_project/tables.png",
+    "/images/research_project/tables_2.png",
+    "/images/research_project/foods.png",
+    "/images/research_project/ordering.png",
+    "/images/research_project/menu.png",
+    "/images/research_project/accounts_2.png",
+    "/images/research_project/prototype_3.jpg",
+    "/images/research_project/prototype_4.jpg"
   ],
   "duration": "3 months",
   "timeline": "2022-2023",
@@ -28,5 +24,70 @@
     "Data Analytics & Reports – Generate insights into sales, popular items, and staff performance."
   ],
   "people": ["Daryl Magpantay", "Richard Manipon", "James Ferrer", "Louise Yagi"],
-  "project_type": "Web Application"
+  "project_type": "Thesis project",
+  "functions": [
+    "Real-time table status display with color-coded indicators (Red – Occupied, Green – Unoccupied, Yellow – Needs assistance, Blue – Dirty, Grey – Not connected to the device, Purple – Connecting to the device)",
+    "Table timer to track dining duration",
+    "Order tracking with detailed order history",
+    "Process and save customer transactions",
+    "Generate billing summaries",
+    "Add or remove tables dynamically",
+    "Point-of-Sale (POS) food ordering system with item customization",
+    "Update order quantity and display total cost in real-time",
+    "Menu management (add, update, or delete food items)",
+    "Real-time order queue for kitchen staff",
+    "Order processing system with completion and cancellation options",
+    "Account registration with role-based access control",
+    "Performance review tracking for staff",
+    "Login history and activity monitoring"
+  ],
+  "improvements": [
+    "Mobile app integration for customer ordering",
+    "Customer feedback system for gathering and analyzing reviews",
+    "Data analytics and reporting for sales, popular items, and staff performance",
+    "Customizable promotional offers and discounts engine",
+    "Integration with payment gateways for multiple payment options"
+  ],
+  "process": [
+    {
+      "title": "Discovery & Research",
+      "details": [
+        "Conduct interviews with restaurant owners and staff to identify operational problems",
+        "Observe customer flow and service processes to understand pain points",
+        "Gather insights from existing systems and competitors",
+        "Define the project scope based on the restaurant’s specific needs"
+      ]
+    },
+    {
+      "title": "Ideation & Concept",
+      "details": [
+        "Choose the right tech stack (e.g., programming languages, frameworks, hardware)",
+        "Create wireframes for the UI and schematics for the table monitoring hardware",
+        "Identify system inputs (e.g., order details, table status, payment info) and outputs (e.g., receipts, reports, table availability)",
+        "Plan system architecture for both web app and hardware integration"
+      ]
+    },
+    {
+      "title": "Design & Prototyping",
+      "details": [
+        "Develop high-fidelity UI mockups based on wireframes",
+        "Design database schema for orders, tables, menu items, and user accounts",
+        "Build a clickable prototype for the ordering flow",
+        "Create hardware prototype for table occupancy detection",
+        "Test prototypes with a small group of users to gather feedback",
+        "Refine designs and system features based on usability testing results"
+      ]
+    },
+    {
+      "title": "Implementation & Launch",
+      "details": [
+        "Develop the frontend (web app interface) and backend (order processing, database, API)",
+        "Integrate hardware sensors with backend for real-time table status updates",
+        "Conduct system integration testing between hardware and web app",
+        "Implement security features (authentication, role-based access)",
+        "Provide staff training and create user manuals",
+        "Gather feedback post-launch and plan for future updates"
+      ]
+    }
+  ]
 }

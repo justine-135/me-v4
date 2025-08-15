@@ -1,0 +1,25 @@
+{
+  "title": "Student Record Management System",
+  "description": "The challenges stemming from traditional student record-keeping methods arise from manual processes, disorganized data management, limited accessibility, and the potential for human errors. Relying on physical files or disjointed digital systems hampers efficiency, while disconnected departments lead to duplication and confusion. Restricted access based on physical proximity restricts timely communication, and manual data entry introduces inaccuracies. These issues collectively hinder effective record management and communication within educational institutions.",
+  "problem": "Teachers often face a challenging task when searching for a student's document, as they navigate through stacks of papers, envelopes, and drawers. Additionally, the predicament extends to former students who lack saved information due to the unfortunate reality of lost documents.",
+  "answer": "To address the issue, a web based student record system that provides a record-keeping with quick access to student documents, safe storage for current and past students, organized data, automated tasks, and better communication among everyone involved. This digital tool kicks out the old hassles of paper records, making data management accurate, communication effective, and decision-making smart in education.",
+  "image_urls": [
+    "/images/student_record_system/login.png",
+    "/images/student_record_system/home.gif",
+    "/images/student_record_system/enrollment_2.gif",
+    "/images/student_record_system/accounts_2.gif",
+    "/images/student_record_system/grading.gif",
+    "/images/student_record_system/promotion.gif",
+    "/images/student_record_system/students.gif"
+  ],
+  "duration": "3 months",
+  "timeline": "2023",
+  "role": "Full stack developer",
+  "future_improvements": [
+    "Mobile App Integration – Allow customers to place orders via a mobile app.",
+    "Customer Feedback System – Gather and analyze customer reviews.",
+    "Data Analytics & Reports – Generate insights into sales, popular items, and staff performance."
+  ],
+  "people": ["Daryl Magpantay"],
+  "project_type": "Training project"
+}

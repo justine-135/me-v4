@@ -1,8 +1,8 @@
 import { Avatar, type AvatarRootProps } from '@chakra-ui/react/avatar'
 
 interface IAvatarProps extends AvatarRootProps {
-  src: string
-  fallback: string
+  src?: string
+  fallback?: string
 }
 
 export default function AvatarCustom({ src, fallback, ...rest }: IAvatarProps) {

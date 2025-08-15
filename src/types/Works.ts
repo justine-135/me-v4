@@ -4,13 +4,22 @@ export interface IProjects {
   image: string
   description: string
   is_featured: boolean
-  date: string
   tags: string[]
+  project_type: string
+  role: string
+  link_url: string
+  duration: string
+  timeline: string
 }
 
 export interface IWorksData {
   intro: string
   featured_projects: IProjects[]
+}
+
+export interface IProcess {
+  title: string
+  details: string[]
 }
 
 export type IWorkDetail = {
@@ -25,4 +34,7 @@ export type IWorkDetail = {
   future_improvements: string[]
   people: string[]
   project_type: string
+  functions: string[]
+  improvements: string[]
+  process: IProcess[]
 }

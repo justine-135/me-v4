@@ -38,9 +38,9 @@ const Thumbnail = ({ src }: { src: string }) => {
       <Image
         onClick={onToggle}
         src={src}
-        w={300}
-        shadow="md"
-        rounded="xl"
+        h={100}
+        w={250}
+        rounded="md"
         _hover={{ cursor: 'pointer' }}
       />
     </>
@@ -53,7 +53,7 @@ export default function ProjectVisualsCard({ imageUrls }: IProjectVisualsCardPro
       <Stack gap={4}>
         <Typography>Key screens and design solutions</Typography>
         <Box>
-          <HStack overflow="auto">
+          <HStack overflow="auto" p={4}>
             {imageUrls?.map((imageUrl, idx) => {
               return <Thumbnail src={imageUrl} key={idx} />
             })}

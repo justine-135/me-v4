@@ -7,7 +7,7 @@ interface IFlexboxLayoutProps extends FlexProps {
 
 export default function FlexboxLayout({ children, ...rest }: IFlexboxLayoutProps) {
   return (
-    <Flex gap={4} direction={{ sm: 'column', mdToLg: 'column', md: 'row' }} {...rest}>
+    <Flex gap={4} direction={{ sm: 'column', mdToLg: 'column', md: 'row' }} maxW="5xl" {...rest}>
       {children}
     </Flex>
   )
