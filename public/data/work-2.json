@@ -11,5 +11,57 @@
     "Data Analytics & Reports – Generate insights into sales, popular items, and staff performance."
   ],
   "people": ["Daryl Magpantay", "Richard Manipon", "James Ferrer", "Louise Yagi"],
-  "project_type": "Course project"
+  "project_type": "Course project",
+  "process": [
+    {
+      "title": "Discovery & Research",
+      "details": [
+        "Identify target users and their needs for a motion capture system",
+        "Research existing motion detection and image storage solutions",
+        "Assess available hardware (webcams, cameras) and software options for implementation"
+      ]
+    },
+    {
+      "title": "Ideation & Concept",
+      "details": [
+        "Choose the tech stack including React for the frontend, Node.js for the backend, MySQL for the database, and Python for motion detection",
+        "Design wireframes for the web app interface for login, live feed, and captured image viewing",
+        "Identify system inputs (camera feed, movement detection triggers) and outputs (captured images with timestamps)"
+      ]
+    },
+    {
+      "title": "Design & Prototyping",
+      "details": [
+        "Create mockups for the web app UI",
+        "Design the database schema to store user data, images, and timestamps",
+        "Develop a prototype Python script for movement detection and image capture",
+        "Conduct small-scale tests to validate motion detection accuracy",
+        "Refine the design based on testing feedback"
+      ]
+    },
+    {
+      "title": "Implementation & Launch",
+      "details": [
+        "Develop the frontend React application with login and image viewing functionality",
+        "Implement the Node.js backend to handle authentication, image storage, and data retrieval",
+        "Integrate the Python motion detection script with the backend for automated image capture",
+        "Test the system end-to-end, ensuring images are captured and displayed with accurate timestamps"
+      ]
+    }
+  ],
+  "functions": [
+    "User authentication with secure login to view personal captured images",
+    "Start and stop camera recording through the web app",
+    "Motion detection using Python to trigger image capture",
+    "Automatic screenshot capture upon detecting movement",
+    "Access the application via a web app built with React, Node.js, and MySQL",
+    "View and filter captured images by date and time",
+    "Organize images by user account for privacy and security"
+  ],
+  "improvements": [
+    "AI-powered motion detection to reduce false triggers",
+    "Live video streaming alongside motion detection",
+    "Face recognition to identify known individuals",
+    "Search and filter captured images by specific criteria"
+  ]
 }

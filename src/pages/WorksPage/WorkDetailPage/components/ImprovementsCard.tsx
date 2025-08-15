@@ -12,7 +12,7 @@ interface IImprovementsCardProps {
 export default function ImprovementsCard({ improvements }: IImprovementsCardProps) {
   const { backgroundAccent } = useThemeValues()
   return (
-    <CardCustom cardTitle="🛠️ Future Improvements">
+    <CardCustom cardTitle="🛠️ Feature improvements">
       <Stack gap={4}>
         <Typography>Potential enhancements and next steps</Typography>
         <Stack>
@@ -20,7 +20,7 @@ export default function ImprovementsCard({ improvements }: IImprovementsCardProp
             return (
               <Box bg={backgroundAccent} key={idx} p={2} rounded="lg">
                 <HStack alignItems="start" gap={3}>
-                  <Badge colorPalette="blue">{idx}</Badge>
+                  <Badge colorPalette="blue">{idx + 1}</Badge>
                   <Typography>{string}</Typography>
                 </HStack>
               </Box>

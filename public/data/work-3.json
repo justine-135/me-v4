@@ -21,5 +21,57 @@
     "Data Analytics & Reports – Generate insights into sales, popular items, and staff performance."
   ],
   "people": ["Daryl Magpantay"],
-  "project_type": "Training project"
+  "project_type": "Training project",
+  "functions": [
+    "Secure storage and management of student personal information",
+    "Track quarterly grades and performance analysis",
+    "Maintain detailed enrollment history",
+    "Advanced search and filtering for quick access to student records",
+    "Role-based access control (Super Admin, Teachers, Staff)",
+    "User registration with authentication",
+    "Automated student enrollment process",
+    "Ability to add new grade levels and sections dynamically"
+  ],
+  "improvements": [
+    "Parent portal to allow parents to track their child’s performance",
+    "Mobile app integration for easier access by teachers, students, and parents",
+    "Integration with payment systems for tuition and fees",
+    "Analytics dashboard for school administrators to monitor overall performance",
+    "Online assignment submission and grading"
+  ],
+  "process": [
+    {
+      "title": "Discovery & Research",
+      "details": [
+        "Conduct interviews with school administrators, teachers, and staff to identify challenges in managing student records",
+        "Research existing student information systems for inspiration and improvements",
+        "Define the project scope based on the school's requirements and compliance standards"
+      ]
+    },
+    {
+      "title": "Ideation & Concept",
+      "details": [
+        "Create wireframes for the web app interface and plan the database schema",
+        "Identify system inputs (e.g., student data, grades, enrollment info) and outputs (e.g., reports, dashboards, notifications)",
+        "Plan system architecture for secure data handling and role-based access"
+      ]
+    },
+    {
+      "title": "Design & Prototyping",
+      "details": [
+        "Design UI mockups for student, teacher, and admin portals",
+        "Develop the database schema for storing student information, grades, and enrollment history",
+        "Build a clickable prototype of the main workflows (record management, grading, enrollment)"
+      ]
+    },
+    {
+      "title": "Implementation & Launch",
+      "details": [
+        "Develop the frontend interface for admin, teacher, and student portals",
+        "Implement backend systems for authentication, role-based permissions, and data storage",
+        "Integrate grading, enrollment, and reporting modules",
+        "Provide training sessions and user manuals for staff"
+      ]
+    }
+  ]
 }

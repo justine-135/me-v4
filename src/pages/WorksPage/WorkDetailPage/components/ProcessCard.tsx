@@ -18,7 +18,7 @@ export default function ProcessCard({ processes }: IProcessCardProps) {
             <Box key={idx}>
               <HStack alignItems="start" gap={3}>
                 <Badge variant="solid" size="lg" rounded="full">
-                  {idx}
+                  {idx + 1}
                 </Badge>
                 <Stack>
                   <Typography variant="subheading">{title}</Typography>

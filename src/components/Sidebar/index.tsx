@@ -16,6 +16,7 @@ export default function Sidebar() {
       background={background}
       borderRightWidth="1px"
       zIndex={0}
+      as="aside"
     >
       <Box>
         <Box py="3rem">

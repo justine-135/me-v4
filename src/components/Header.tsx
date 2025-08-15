@@ -17,6 +17,7 @@ export default function Header() {
       background={background}
       borderBottomWidth="1px"
       zIndex={3}
+      as="header"
     >
       <div>Justine Upano</div>
       <div>

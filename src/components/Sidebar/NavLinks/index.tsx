@@ -11,7 +11,7 @@ const NAV_ROUTES = [
 
 export default function index() {
   return (
-    <List.Root variant="plain" w="100%">
+    <List.Root variant="plain" w="100%" as="nav">
       {NAV_ROUTES.map((navRoute) => {
         const { id, label, icon } = navRoute
         return <NavLink icon={icon} id={id} label={label} key={id} />

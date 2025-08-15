@@ -37,7 +37,7 @@ export default function PageLayout({
   showBackBtn = false,
 }: IPageLayoutProps) {
   return (
-    <Stack gap={4}>
+    <Stack gap={4} as="main">
       <Stack alignItems="start">
         {showBackBtn && <BackButton />}
         {title && <Typography variant="heading">{title}</Typography>}
