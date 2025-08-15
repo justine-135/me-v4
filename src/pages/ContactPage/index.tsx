@@ -8,11 +8,11 @@ import StackLayout from '@/layout/StackLayout'
 export default function ContactPage() {
   return (
     <PageLayout title="Contact me">
-      <StackLayout>
+      <StackLayout as="section">
         <IntroductionCard />
         <FormCard />
       </StackLayout>
-      <StackLayout flex={1}>
+      <StackLayout flex={1} as="aside">
         <LinksCard />
         <LocationCard />
       </StackLayout>

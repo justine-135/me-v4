@@ -12,7 +12,7 @@ interface IImprovementsCardProps {
 export default function ImprovementsCard({ improvements }: IImprovementsCardProps) {
   const { backgroundAccent } = useThemeValues()
   return (
-    <CardCustom cardTitle="🛠️ Feature improvements">
+    <CardCustom cardTitle="🛠️ Feature improvements" as="section">
       <Stack gap={4}>
         <Typography>Potential enhancements and next steps</Typography>
         <Stack>

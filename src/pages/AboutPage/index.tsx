@@ -17,11 +17,11 @@ export default function AboutPage() {
 
   return (
     <PageLayout title="About">
-      <StackLayout>
+      <StackLayout as="section">
         <IntroductionCard name={data?.name} jobTitle={data?.job_title} intros={data?.intros} />
         <ExperienceCard experiences={data?.experiences} />
       </StackLayout>
-      <StackLayout flex={1}>
+      <StackLayout flex={1} as="aside">
         <SkillsCard skills={data?.skills} />
         <InterestsCard interests={data?.interests} />
       </StackLayout>

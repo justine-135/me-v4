@@ -9,7 +9,7 @@ interface IFunctionalitiesCardProps {
 
 export default function FunctionalitiesCard({ functions }: IFunctionalitiesCardProps) {
   return (
-    <CardCustom cardTitle="Key functionalities">
+    <CardCustom cardTitle="Key functionalities" as="section">
       <Stack gap={4}>
         <Typography>Core features and capabilities of the project</Typography>
         <List.Root variant="plain" gap={2}>

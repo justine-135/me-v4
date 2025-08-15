@@ -4,7 +4,7 @@ import { Stack } from '@chakra-ui/react'
 
 export default function LocationCard() {
   return (
-    <CardCustom cardTitle="Location & Time">
+    <CardCustom cardTitle="Location & Time" as="section">
       <Stack>
         <Typography>📍 Manila, PH</Typography>
         <Typography>🕐 PHT (UTC+8)</Typography>

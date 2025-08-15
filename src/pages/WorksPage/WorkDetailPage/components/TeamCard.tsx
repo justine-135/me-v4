@@ -20,7 +20,7 @@ interface ITeamCardProps {
 
 export default function TeamCard({ people }: ITeamCardProps) {
   return (
-    <CardCustom cardTitle="🧑‍🤝‍🧑 Team & collaboration">
+    <CardCustom cardTitle="🧑‍🤝‍🧑 Team & collaboration" as="section">
       <Typography>The talented people who made this project possible</Typography>
       <Stack mt={4} gap={4}>
         {people?.map((name, idx) => {

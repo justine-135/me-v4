@@ -26,7 +26,7 @@ export default function LinksCard() {
   ]
 
   return (
-    <CardCustom cardTitle="Get in touch">
+    <CardCustom cardTitle="Get in touch" as="section">
       <Stack>
         {socialLinks.map((social) => {
           const { icon, type, name, link, link_label } = social

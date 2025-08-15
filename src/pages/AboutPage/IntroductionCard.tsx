@@ -14,7 +14,7 @@ export const IntroductionCard = ({
   intros?: string[]
 }) => {
   return (
-    <CardCustom>
+    <CardCustom as="section">
       <Stack gap={10}>
         <HStack gap={3}>
           <AvatarCustom size="2xl" src={ProfileImg} fallback={name || ''} />

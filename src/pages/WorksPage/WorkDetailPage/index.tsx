@@ -28,7 +28,7 @@ export default function WorkDetailPage() {
   return (
     <PageLayout showBackBtn>
       <Stack gap={6}>
-        <StackLayout>
+        <StackLayout as="section">
           <IntroductionCard title={data?.title} description={data?.description} />
           <RoleDuration
             duration={data?.duration}
@@ -37,14 +37,14 @@ export default function WorkDetailPage() {
             projectType={data?.project_type}
           />
         </StackLayout>
-        <FlexboxLayout>
+        <FlexboxLayout as="section">
           <StackLayout>
             <ProjectVisualsCard imageUrls={data?.image_urls} />
             <ProjectOverview problem={data?.problem} answer={data?.answer} />
             <FunctionalitiesCard functions={data?.functions} />
             <ProcessCard processes={data?.process} />
           </StackLayout>
-          <StackLayout flex={1}>
+          <StackLayout flex={1} as="aside">
             <TeamCard people={data?.people} />
             <ImprovementsCard improvements={data?.improvements} />
           </StackLayout>

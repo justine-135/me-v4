@@ -38,7 +38,12 @@ export default function RoleDuration({
   projectType,
 }: IRoleDurationProps) {
   return (
-    <Flex gap={4} wrap="wrap" direction={{ sm: 'column', mdToLg: 'column', md: 'row' }}>
+    <Flex
+      gap={4}
+      wrap="wrap"
+      direction={{ sm: 'column', mdToLg: 'column', md: 'row' }}
+      as="section"
+    >
       <CardSummary icon="⌛" title="Timeline" body={timeline} footer={duration} />
       <CardSummary icon="👨‍💻" title="My role" body={role} />
       <CardSummary icon="⚒️" title="Project type" body={projectType} />

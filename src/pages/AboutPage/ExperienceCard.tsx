@@ -16,7 +16,7 @@ export const ExperienceCard = ({ experiences }: IExperienceCardProps) => {
   })
 
   return (
-    <CardCustom cardTitle="Experience">
+    <CardCustom cardTitle="Experience" as="section">
       <TimelineCustom data={timelineData || []} />
     </CardCustom>
   )

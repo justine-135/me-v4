@@ -4,7 +4,7 @@ import { Stack } from '@chakra-ui/react/stack'
 
 export const InterestsCard = ({ interests }: { interests?: string[] }) => {
   return (
-    <CardCustom cardTitle="Interests">
+    <CardCustom cardTitle="Interests" as="section">
       <Stack wrap="wrap">
         {interests?.map((interest) => {
           return <Typography key={interest}>{interest}</Typography>

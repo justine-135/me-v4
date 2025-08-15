@@ -11,7 +11,7 @@ interface ISideProjectsProps {
 
 export default function SideProjects({ projects }: ISideProjectsProps) {
   return (
-    <Box>
+    <Box as="section">
       <HStack justifyContent="space-between">
         <Box>
           <Typography variant="subheading">Side projects & learning</Typography>

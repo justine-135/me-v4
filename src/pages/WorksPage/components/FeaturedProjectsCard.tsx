@@ -20,7 +20,7 @@ interface IFeaturedProjectsCardProps {
 
 export default function FeaturedProjectsCard({ projects }: IFeaturedProjectsCardProps) {
   return (
-    <Box>
+    <Box as="section">
       <HStack justifyContent="space-between">
         <Box>
           <Typography variant="subheading">Featured projects</Typography>

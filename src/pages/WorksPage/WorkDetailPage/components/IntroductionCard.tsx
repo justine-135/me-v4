@@ -8,7 +8,7 @@ interface IIntroductionCardProps {
 
 export default function IntroductionCard({ title, description }: IIntroductionCardProps) {
   return (
-    <Stack>
+    <Stack as="section">
       <Typography variant="subheading">{title}</Typography>
       <Typography>{description}</Typography>
     </Stack>

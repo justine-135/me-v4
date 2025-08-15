@@ -9,7 +9,7 @@ interface IProcessCardProps {
 
 export default function ProcessCard({ processes }: IProcessCardProps) {
   return (
-    <CardCustom cardTitle="Project process">
+    <CardCustom cardTitle="Project process" as="section">
       <Typography>Step-by-step approach from planning to implementation</Typography>
       <Stack mt={4} gap={4}>
         {processes?.map((process, idx) => {

@@ -49,7 +49,7 @@ const Thumbnail = ({ src }: { src: string }) => {
 
 export default function ProjectVisualsCard({ imageUrls }: IProjectVisualsCardProps) {
   return (
-    <CardCustom cardTitle="Project visuals">
+    <CardCustom cardTitle="Project visuals" as="section">
       <Stack gap={4}>
         <Typography>Key screens and design solutions</Typography>
         <Box>

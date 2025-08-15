@@ -30,7 +30,7 @@ export default function ProjectOverview({ problem, answer }: IProjectOverview) {
   if (!problem || !answer) return null
 
   return (
-    <CardCustom cardTitle="Project overview">
+    <CardCustom cardTitle="Project overview" as="section">
       <Flex gap={5}>
         <DataCard label="Problem" value={problem} color="red" />
         <DataCard label="Solution" value={answer} color="blue" />

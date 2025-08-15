@@ -17,11 +17,11 @@ export default function EducationPage() {
 
   return (
     <PageLayout title="Education">
-      <StackLayout>
+      <StackLayout as="section">
         <IntroductionCard intro={data?.intro} />
         <FormalEducationCard education={data?.education} />
       </StackLayout>
-      <StackLayout flex={1}>
+      <StackLayout flex={1} as="aside">
         <CurrentLearning skills={data?.hard_skills_learn} />
         <DevelopmentSkillsCard skills={data?.soft_skills_learn} />
       </StackLayout>
