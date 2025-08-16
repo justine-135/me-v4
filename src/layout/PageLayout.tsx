@@ -1,11 +1,12 @@
 import { Typography } from '@/components/Typography'
 import { Stack } from '@chakra-ui/react/stack'
 import type React from 'react'
-import { Button, type FlexProps } from '@chakra-ui/react'
+import { Button } from '@chakra-ui/react/button'
 import FlexboxLayout from './FlexLayout'
 import { useNavigate } from 'react-router'
 import { BsArrowLeft } from 'react-icons/bs'
 import useThemeValues from '@/hooks/useThemeValues'
+import StackLayout from './StackLayout'
 
 const BackButton = () => {
   const navigate = useNavigate()
@@ -26,23 +27,38 @@ const BackButton = () => {
 interface IPageLayoutProps {
   title?: string
   children: React.ReactNode
-  flexboxLayoutProps?: FlexProps
   showBackBtn?: boolean
+  topSection?: React.ReactNode
+  asideSection?: React.ReactNode
 }
 
 export default function PageLayout({
   title,
   children,
-  flexboxLayoutProps,
   showBackBtn = false,
+  topSection,
+  asideSection,
 }: IPageLayoutProps) {
   return (
-    <Stack gap={4} as="main">
+    <Stack gap={4} as="section">
       <Stack alignItems="start">
         {showBackBtn && <BackButton />}
         {title && <Typography variant="heading">{title}</Typography>}
       </Stack>
-      <FlexboxLayout {...flexboxLayoutProps}>{children}</FlexboxLayout>
+      <Stack gap={6} maxW="5xl">
+        {/* Top section */}
+        {topSection && <StackLayout>{topSection}</StackLayout>}
+        <FlexboxLayout as="main">
+          {/* Main section */}
+          <StackLayout as="section">{children}</StackLayout>
+          {/* Right side section */}
+          {asideSection && (
+            <StackLayout flex={1} as="aside">
+              {asideSection}
+            </StackLayout>
+          )}
+        </FlexboxLayout>
+      </Stack>
     </Stack>
   )
 }

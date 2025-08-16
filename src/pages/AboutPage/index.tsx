@@ -7,7 +7,6 @@ import { ABOUT_JSON_PATH } from '@/constants/paths'
 import useSWR from 'swr'
 import { fetcher } from '@/util'
 import type { IAboutData } from '@/types/About'
-import StackLayout from '@/layout/StackLayout'
 
 export default function AboutPage() {
   const { data, error, isLoading } = useSWR<IAboutData>(ABOUT_JSON_PATH, fetcher)
@@ -16,15 +15,17 @@ export default function AboutPage() {
   if (error) return <p>Failed to load data</p>
 
   return (
-    <PageLayout title="About">
-      <StackLayout as="section">
-        <IntroductionCard name={data?.name} jobTitle={data?.job_title} intros={data?.intros} />
-        <ExperienceCard experiences={data?.experiences} />
-      </StackLayout>
-      <StackLayout flex={1} as="aside">
-        <SkillsCard skills={data?.skills} />
-        <InterestsCard interests={data?.interests} />
-      </StackLayout>
+    <PageLayout
+      title="About"
+      asideSection={
+        <>
+          <SkillsCard skills={data?.skills} />
+          <InterestsCard interests={data?.interests} />
+        </>
+      }
+    >
+      <IntroductionCard name={data?.name} jobTitle={data?.job_title} intros={data?.intros} />
+      <ExperienceCard experiences={data?.experiences} />
     </PageLayout>
   )
 }
