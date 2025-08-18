@@ -1,4 +1,5 @@
 import LinkButton from '@/components/Button/LinkButton'
+import { ReadMoreButton } from '@/components/Button/ReadMoreButton'
 import CardCustom from '@/components/CardCustom'
 import { Typography } from '@/components/Typography'
 import type { IProjects } from '@/types/Works'
@@ -26,14 +27,34 @@ export default function SideProjects({ projects }: ISideProjectsProps) {
               <CardCustom imageProps={{ src: project.image }} h="full">
                 <Flex flexDirection="column" gap={4} h="full">
                   <HStack justifyContent="space-between">
-                    <Badge variant="outline">{project.project_type}</Badge>
+                    <HStack>
+                      {project.project_type.map((type) => {
+                        return (
+                          <Badge variant="outline" key={type}>
+                            {type}
+                          </Badge>
+                        )
+                      })}
+                    </HStack>
                     <Badge variant="outline">{project.timeline}</Badge>
                   </HStack>
                   <Typography variant="subheading" fontWeight="normal">
                     {project.title}
                   </Typography>
                   <Typography>{project.description}</Typography>
+                  <HStack wrap="wrap">
+                    {project.tags.map((tag, idx) => {
+                      return (
+                        <Badge key={idx} variant="outline">
+                          {tag}
+                        </Badge>
+                      )
+                    })}
+                  </HStack>
                   <HStack mt="auto">
+                    {project.is_showcase && (
+                      <ReadMoreButton path={`/side/${project.id}`}>Read more</ReadMoreButton>
+                    )}
                     {project.live_url && (
                       <LinkButton
                         to={project.live_url}

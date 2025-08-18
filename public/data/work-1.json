@@ -19,7 +19,7 @@
   "timeline": "2022-2023",
   "role": "Lead developer",
   "people": ["Daryl Magpantay", "Richard Manipon", "James Ferrer", "Louise Yagi"],
-  "project_type": "Thesis project",
+  "project_type": ["Thesis project"],
   "functions": [
     "Real-time table status display with color-coded indicators (Red – Occupied, Green – Unoccupied, Yellow – Needs assistance, Blue – Dirty, Grey – Not connected to the device, Purple – Connecting to the device)",
     "Table timer to track dining duration",
@@ -83,5 +83,7 @@
         "Gather feedback post-launch and plan for future updates"
       ]
     }
-  ]
+  ],
+  "technology": ["bootstrap", "php", "javascript", "css", "mysql"],
+  "link_url": "https://github.com/justine-135/dadz-grill-thesis"
 }

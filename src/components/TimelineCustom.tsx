@@ -1,6 +1,5 @@
 import { LuCheck } from 'react-icons/lu'
 import { HStack, Timeline, Badge, type TimelineRootProps, Stack } from '@chakra-ui/react'
-import { SKILL_COLORS } from '@/constants/badge'
 
 interface ITimelineData {
   title: string
@@ -41,12 +40,7 @@ const TimelineItem = ({ title, subtitle, details, date, current, badges }: ITime
           <Timeline.Description>
             <HStack gap={2} wrap="wrap">
               {badges.map((badge, idx) => {
-                const color = SKILL_COLORS[badge] || 'transparent'
-                return (
-                  <Badge key={idx} colorPalette={color}>
-                    {badge}
-                  </Badge>
-                )
+                return <Badge key={idx}>{badge}</Badge>
               })}
             </HStack>
           </Timeline.Description>

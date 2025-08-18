@@ -14,4 +14,5 @@ export const SKILL_COLORS: Record<string, BadgeProps['colorPalette']> = {
   mysql: 'blue',
   restapi: 'orange',
   bootstrap: 'blue',
+  tailwindcss: 'blue',
 }

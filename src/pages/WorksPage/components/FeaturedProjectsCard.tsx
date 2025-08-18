@@ -1,18 +1,11 @@
 import LinkButton from '@/components/Button/LinkButton'
+import { ReadMoreButton } from '@/components/Button/ReadMoreButton'
 import CardCustom from '@/components/CardCustom'
 import { Typography } from '@/components/Typography'
-import { SKILL_COLORS } from '@/constants/badge'
 import type { IProjects } from '@/types/Works'
 import { Badge, Box, HStack, Stack } from '@chakra-ui/react'
 import { BsDot } from 'react-icons/bs'
 import { FaGithub } from 'react-icons/fa'
-import { useLocation } from 'react-router'
-
-const ReadMoreButton = ({ id }: { id: number }) => {
-  const location = useLocation()
-
-  return <LinkButton to={`${location.pathname}/${id}`}>Read more</LinkButton>
-}
 
 interface IFeaturedProjectsCardProps {
   projects?: IProjects[]
@@ -53,16 +46,15 @@ export default function FeaturedProjectsCard({ projects }: IFeaturedProjectsCard
                   <Typography lineHeight="2">{project.description}</Typography>
                   <HStack wrap="wrap" mb={4}>
                     {project.tags.map((tag, idx) => {
-                      const color = SKILL_COLORS[tag] || 'transparent'
                       return (
-                        <Badge key={idx} colorPalette={color}>
+                        <Badge key={idx} variant="outline">
                           {tag}
                         </Badge>
                       )
                     })}
                   </HStack>
                   <HStack gap={2} mt="auto">
-                    <ReadMoreButton id={project.id} />
+                    <ReadMoreButton path={`/featured/${project.id}`}>Read more</ReadMoreButton>
                     <LinkButton
                       to={project.link_url}
                       buttonProps={{ variant: 'outline' }}

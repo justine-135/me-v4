@@ -19,9 +19,9 @@ export const SkillsCard = ({ skills }: ISkillsCardProps) => {
               <Typography variant="subheading">{skill.title}</Typography>
               <HStack wrap="wrap">
                 {skill.items.map((item) => {
-                  const color = SKILL_COLORS[item] || 'transparent'
+                  const isSolid = SKILL_COLORS[item] || null
                   return (
-                    <Badge key={item} colorPalette={color}>
+                    <Badge key={item} variant={isSolid ? 'solid' : 'outline'}>
                       {item}
                     </Badge>
                   )

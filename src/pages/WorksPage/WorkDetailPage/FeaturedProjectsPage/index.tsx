@@ -1,22 +1,25 @@
 import PageLayout from '@/layout/PageLayout'
-import type { IWorkDetail } from '@/types/Works'
+import type { IFeaturedProject } from '@/types/Works'
 import { fetcher } from '@/util'
 import { useParams } from 'react-router'
 import useSWR from 'swr'
-import RoleDuration from './components/RoleDuration'
-import IntroductionCard from './components/IntroductionCard'
-import ProjectVisualsCard from './components/ProjectVisualsCard'
-import ProjectOverview from './components/ProjectOverview'
-import TeamCard from './components/TeamCard'
-import FunctionalitiesCard from './components/FunctionalitiesCard'
-import ImprovementsCard from './components/ImprovementsCard'
+
 import ProcessCard from './components/ProcessCard'
 import { useScrollToTop } from '@/hooks/useScrollToTop'
+import IntroductionCard from '../components/IntroductionCard'
+import RoleDuration from './components/RoleDuration'
+import TeamCard from './components/TeamCard'
+import ImprovementsCard from '../components/ImprovementsCard'
+import ProjectVisualsCard from '../components/ProjectVisualsCard'
+import ProjectOverview from './components/ProjectOverview'
+import FunctionalitiesCard from '../components/FunctionalitiesCard'
+import ViewCodeCard from '../components/ViewCodeCard'
+import TechStackCard from '../components/TechStackCard'
 
-export default function WorkDetailPage() {
+export default function FeaturedProjectsPage() {
   const param = useParams()
   const { id } = param
-  const { data, error, isLoading } = useSWR<IWorkDetail>(`/data/work-${id}.json`, fetcher)
+  const { data, error, isLoading } = useSWR<IFeaturedProject>(`/data/work-${id}.json`, fetcher)
   useScrollToTop()
 
   if (isLoading) return <p>Loading...</p>
@@ -38,8 +41,10 @@ export default function WorkDetailPage() {
       }
       asideSection={
         <>
+          <TechStackCard technologies={data?.technology} />
           <TeamCard people={data?.people} />
           <ImprovementsCard improvements={data?.improvements} />
+          <ViewCodeCard href={data?.link_url} />
         </>
       }
     >

@@ -6,7 +6,7 @@
   "timeline": "2023",
   "role": "Lead developer",
   "people": ["Daryl Magpantay", "Richard Manipon", "James Ferrer", "Louise Yagi"],
-  "project_type": "Course project",
+  "project_type": ["Course project"],
   "process": [
     {
       "title": "Discovery & Research",
@@ -58,5 +58,7 @@
     "Live video streaming alongside motion detection",
     "Face recognition to identify known individuals",
     "Search and filter captured images by specific criteria"
-  ]
+  ],
+  "technology": ["nextjs", "python", "nodejs", "mysql"],
+  "link_url": "https://github.com/justine-135/cpet17-finals"
 }

@@ -16,7 +16,7 @@
   "timeline": "2023",
   "role": "Full stack developer",
   "people": ["Daryl Magpantay"],
-  "project_type": "Training project",
+  "project_type": ["Training project"],
   "functions": [
     "Secure storage and management of student personal information",
     "Track quarterly grades and performance analysis",
@@ -68,5 +68,7 @@
         "Provide training sessions and user manuals for staff"
       ]
     }
-  ]
+  ],
+  "technology": ["html", "css", "php", "javascript", "mysql"],
+  "link_url": "https://github.com/justine-135/School-record-management-system"
 }

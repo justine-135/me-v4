@@ -5,7 +5,7 @@ import { Box, Flex, HStack, Stack } from '@chakra-ui/react'
 interface ICardSummaryProps {
   icon: string
   title?: string
-  body?: string
+  body?: React.ReactNode
   footer?: string
 }
 
@@ -28,7 +28,7 @@ interface IRoleDurationProps {
   duration?: string
   timeline?: string
   role?: string
-  projectType?: string
+  projectType?: string[]
 }
 
 export default function RoleDuration({
@@ -37,6 +37,10 @@ export default function RoleDuration({
   role,
   projectType,
 }: IRoleDurationProps) {
+  const types = projectType?.map((project) => {
+    return <span key={project}>{project}</span>
+  })
+
   return (
     <Flex
       gap={4}
@@ -46,7 +50,7 @@ export default function RoleDuration({
     >
       <CardSummary icon="⌛" title="Timeline" body={timeline} footer={duration} />
       <CardSummary icon="👨‍💻" title="My role" body={role} />
-      <CardSummary icon="⚒️" title="Project type" body={projectType} />
+      <CardSummary icon="⚒️" title="Project type" body={<>{types}</>} />
     </Flex>
   )
 }

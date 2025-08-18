@@ -5,12 +5,13 @@ export interface IProjects {
   description: string
   is_featured: boolean
   tags: string[]
-  project_type: string
+  project_type: string[]
   role?: string
   link_url: string
   duration?: string
   timeline: string
   live_url?: string
+  is_showcase: boolean | null
 }
 
 export interface IWorksData {
@@ -23,19 +24,33 @@ export interface IProcess {
   details: string[]
 }
 
-export type IWorkDetail = {
+export interface IWorkDetail {
   title: string
   description: string
-  problem: string
-  answer: string
   image_urls: string[]
-  duration: string
-  timeline: string
-  role: string
   future_improvements: string[]
-  people: string[]
-  project_type: string
+  project_type: string[]
   functions: string[]
   improvements: string[]
+  technology: string[]
+  link_url: string
+}
+
+export interface IFeaturedProject extends IWorkDetail {
+  problem: string
+  answer: string
   process: IProcess[]
+  role: string
+  duration: string
+  timeline: string
+  people: string[]
+}
+
+export interface IChallenges {
+  challenge: string
+  solution: string
+}
+
+export interface ISideProject extends IWorkDetail {
+  challenges: IChallenges[]
 }

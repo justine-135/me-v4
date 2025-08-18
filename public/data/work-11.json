@@ -1,0 +1,49 @@
+{
+  "title": "Social app",
+  "description": "A social web application inspired by Threads, allowing users to create and share posts, interact through comments and likes, and build social connections. The platform focuses on simplicity and real-time engagement, with planned enhancements such as notifications, private messaging, and multimedia support to increase user interaction and scalability.",
+  "image_urls": [
+    "/images/social_app/1.png",
+    "/images/social_app/2.gif",
+    "/images/social_app/3.gif",
+    "/images/social_app/4.gif"
+  ],
+  "functions": [
+    "Secure user authentication with account creation and login",
+    "Create and share text-based posts in a real-time feed",
+    "Engagement tools including likes and threaded comments",
+    "Follow/unfollow functionality to build social connections",
+    "Like and comment on posts to engage with others",
+    "User profile pages with bio, follower metrics, and post history",
+    "Search and discovery to find users",
+    "Simple, minimal UI inspired by Threads",
+    "Cursor-based pagination for efficient infinite scrolling"
+  ],
+  "improvements": [
+    "Search and discovery to find posts, and trending topics",
+    "In-app notifications for likes, comments, mentions, and new followers",
+    "Private messaging for direct communication",
+    "Rich media support including short-form videos",
+    "Trending feed powered by hashtags and popular discussions",
+    "Advanced moderation features (reporting, blocking, content filters)"
+  ],
+  "technology": ["reactjs", "typescript", "vite", "tailwindcss", "restapi", "nodejs", "supabase"],
+  "link_url": "https://github.com/justine-135/social-app",
+  "challenges": [
+    {
+      "challenge": "Managing database relationships for posts, likes, and comments",
+      "solution": "Designed relational tables in Supabase with proper foreign keys (users → posts → comments, likes), applied row-level security (RLS), and wrote efficient queries to fetch nested data."
+    },
+    {
+      "challenge": "Handling image uploads for user profiles and posts",
+      "solution": "Stored images in Supabase storage, generated public URLs, and created an upload handler on the backend with validation for file size and type."
+    },
+    {
+      "challenge": "Securing API routes in Express",
+      "solution": "Implemented middleware to validate JWT tokens from Supabase before processing API requests and returned proper error codes on failure."
+    },
+    {
+      "challenge": "Implementing cursor-based pagination for posts feed",
+      "solution": "Used the post creation timestamp or unique IDs as cursors in Supabase queries, allowing infinite scrolling without performance issues caused by large offsets."
+    }
+  ]
+}

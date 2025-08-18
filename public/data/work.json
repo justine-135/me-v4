@@ -9,7 +9,7 @@
       "is_featured": true,
       "tags": ["bootstrap", "php", "javascript", "css", "mysql"],
       "link_url": "https://github.com/justine-135/dadz-grill-thesis",
-      "project_type": "Thesis project",
+      "project_type": ["Thesis project"],
       "role": "Lead developer",
       "duration": "3 months",
       "timeline": "2022-2023"
@@ -22,7 +22,7 @@
       "is_featured": true,
       "tags": ["nextjs", "python", "nodejs", "mysql"],
       "link_url": "https://github.com/justine-135/cpet17-finals",
-      "project_type": "Course project",
+      "project_type": ["Course project"],
       "role": "Lead developer",
       "duration": "3 months",
       "timeline": "2023"
@@ -35,7 +35,7 @@
       "is_featured": true,
       "tags": ["html", "css", "php", "javascript", "mysql"],
       "link_url": "https://github.com/justine-135/School-record-management-system",
-      "project_type": "Training project",
+      "project_type": ["Training project"],
       "role": "Full stack developer",
       "duration": "3 months",
       "timeline": "2022-2023"
@@ -47,7 +47,7 @@
       "description": "A platform for safely storing and organizing student information, including grades, academic records, and personal details.",
       "is_featured": false,
       "tags": ["reactjs", "sass"],
-      "project_type": "Learning challenge",
+      "project_type": ["Learning challenge"],
       "timeline": "2023",
       "link_url": "https://github.com/justine-135/interactive-pricing-component",
       "live_url": "https://justine-135.github.io/interactive-pricing-component/"
@@ -59,7 +59,7 @@
       "description": "Show map geolocation by searching IP address using leaflet, and IP geolocation API.",
       "is_featured": false,
       "tags": ["reactjs", "api", "sass"],
-      "project_type": "Learning challenge",
+      "project_type": ["Learning challenge"],
       "timeline": "2023",
       "link_url": "https://github.com/justine-135/ip-address-tracker",
       "live_url": "https://justine-135.github.io/ip-address-tracker/"
@@ -71,7 +71,7 @@
       "description": "Using JavaScript to filter out jobs based on selected categories. Provided a local JSON file to help practice working with JSON data.",
       "is_featured": false,
       "tags": ["reactjs", "tailwindcss"],
-      "project_type": "Learning challenge",
+      "project_type": ["Learning challenge"],
       "timeline": "2023",
       "link_url": "https://github.com/justine-135/static-job-listings",
       "live_url": "https://justine-135.github.io/static-job-listings/"
@@ -83,7 +83,7 @@
       "description": "A frontend mentor challenge that test layout skills. There are also areas that will require some JavaScript, such as the tabbed features section and the FAQ accordion.",
       "is_featured": false,
       "tags": ["reactjs", "sass"],
-      "project_type": "Learning challenge",
+      "project_type": ["Learning challenge"],
       "timeline": "2021",
       "link_url": "https://github.com/justine-135/Bookmark",
       "live_url": "https://justine-135.github.io/Bookmark/"
@@ -95,7 +95,7 @@
       "description": "Intermediate frontend mentor challange. Todo list with filter data functionality and animation.",
       "is_featured": false,
       "tags": ["reactjs", "sass"],
-      "project_type": "Learning challenge",
+      "project_type": ["Learning challenge"],
       "timeline": "2021",
       "link_url": "https://github.com/justine-135/Todo",
       "live_url": "https://justine-135.github.io/Todo/"
@@ -107,7 +107,7 @@
       "description": "React to do list with drag and drop functionality. Used react-beautiful-dnd to enable drag and drop todo items, and column.",
       "is_featured": false,
       "tags": ["reactjs", "styled-components"],
-      "project_type": "Side project",
+      "project_type": ["Side project"],
       "timeline": "2023",
       "link_url": "https://github.com/justine-135/react-todo-dnd",
       "live_url": "https://justine-135.github.io/react-todo-dnd/"
@@ -119,10 +119,22 @@
       "description": "My own scary maze game to try out with friends. The idea and concept was based on the popular maze game.",
       "is_featured": false,
       "tags": ["html", "css", "javascript"],
-      "project_type": "Side project",
+      "project_type": ["Side project"],
       "timeline": "2021",
       "link_url": "https://github.com/justine-135/maze-game",
       "live_url": "https://justine-135.github.io/maze-game/"
+    },
+    {
+      "id": 11,
+      "title": "Social app",
+      "image": "/images/sides/social_app.png",
+      "description": "A social app inspired by threads app.",
+      "is_featured": false,
+      "tags": ["reactjs", "typescript", "vite", "tailwindcss", "restapi", "nodejs", "supabase"],
+      "project_type": ["Side project", "Learning project"],
+      "timeline": "2025",
+      "link_url": "https://github.com/justine-135/social-app",
+      "is_showcase": true
     }
   ]
 }
