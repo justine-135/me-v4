@@ -5,7 +5,6 @@ import { useParams } from 'react-router'
 import useSWR from 'swr'
 
 import ProcessCard from './components/ProcessCard'
-import { useScrollToTop } from '@/hooks/useScrollToTop'
 import IntroductionCard from '../components/IntroductionCard'
 import RoleDuration from './components/RoleDuration'
 import TeamCard from './components/TeamCard'
@@ -22,7 +21,6 @@ export default function FeaturedProjectsPage() {
   const param = useParams()
   const { id } = param
   const { data, error, isLoading } = useSWR<IFeaturedProject>(`/data/work-${id}.json`, fetcher)
-  useScrollToTop()
 
   if (isLoading) return <p>Loading...</p>
   if (error) return <p>Failed to load data</p>

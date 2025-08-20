@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router'
 import { BsArrowLeft } from 'react-icons/bs'
 import useThemeValues from '@/hooks/useThemeValues'
 import StackLayout from './StackLayout'
+import { useScrollToTop } from '@/hooks/useScrollToTop'
 
 const BackButton = () => {
   const navigate = useNavigate()
@@ -39,6 +40,8 @@ export default function PageLayout({
   topSection,
   asideSection,
 }: IPageLayoutProps) {
+  useScrollToTop()
+
   return (
     <Stack gap={4} as="section">
       <Stack alignItems="start">

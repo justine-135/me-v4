@@ -10,7 +10,6 @@ import ImprovementsCard from '../components/ImprovementsCard'
 import ViewCodeCard from '../components/ViewCodeCard'
 import FunctionalitiesCard from '../components/FunctionalitiesCard'
 import ChallengesSolutionsCard from './components/ChallengesSolutionsCard'
-import { useScrollToTop } from '@/hooks/useScrollToTop'
 import OverviewCard from '../components/OverviewCard'
 import Footer from '@/components/Footer'
 
@@ -18,7 +17,6 @@ export default function SideProjectsPage() {
   const param = useParams()
   const { id } = param
   const { data, error, isLoading } = useSWR<ISideProject>(`/data/work-${id}.json`, fetcher)
-  useScrollToTop()
 
   if (isLoading) return <p>Loading...</p>
   if (error) return <p>Failed to load data</p>
