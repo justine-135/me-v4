@@ -28,13 +28,10 @@ export default function HomePage() {
 
   return (
     <PageLayout
+      title={data?.name}
       topSection={
         <>
-          <IntroductionCard
-            title={data?.name}
-            subtitle={data?.subtitle}
-            description={data?.description}
-          />
+          <IntroductionCard subtitle={data?.subtitle} description={data?.description} />
           <ButtonGroup github_link={data?.github_url} works_link="works" />
           <OverviewCard
             private_contributions={data?.private_contributions}
