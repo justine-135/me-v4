@@ -21,16 +21,16 @@ const DataCard = ({ label, value, color }: IDataCardProps) => {
   )
 }
 
-interface IProjectOverview {
+interface IProblemSolutionCardProps {
   problem?: string
   answer?: string
 }
 
-export default function ProjectOverview({ problem, answer }: IProjectOverview) {
+export default function ProblemSolutionCard({ problem, answer }: IProblemSolutionCardProps) {
   if (!problem || !answer) return null
 
   return (
-    <CardCustom cardTitle="Project overview" as="section">
+    <CardCustom cardTitle="Problem & solution" as="section">
       <Flex gap={5}>
         <DataCard label="Problem" value={problem} color="red" />
         <DataCard label="Solution" value={answer} color="blue" />

@@ -11,10 +11,12 @@ import RoleDuration from './components/RoleDuration'
 import TeamCard from './components/TeamCard'
 import ImprovementsCard from '../components/ImprovementsCard'
 import ProjectVisualsCard from '../components/ProjectVisualsCard'
-import ProjectOverview from './components/ProjectOverview'
+import ProblemSolutionCard from './components/ProblemSolutionCard'
 import FunctionalitiesCard from '../components/FunctionalitiesCard'
 import ViewCodeCard from '../components/ViewCodeCard'
 import TechStackCard from '../components/TechStackCard'
+import OverviewCard from '../components/OverviewCard'
+import Footer from '@/components/Footer'
 
 export default function FeaturedProjectsPage() {
   const param = useParams()
@@ -48,10 +50,12 @@ export default function FeaturedProjectsPage() {
         </>
       }
     >
+      <OverviewCard description={data?.description} />
       <ProjectVisualsCard imageUrls={data?.image_urls} />
-      <ProjectOverview problem={data?.problem} answer={data?.answer} />
+      <ProblemSolutionCard problem={data?.problem} answer={data?.answer} />
       <FunctionalitiesCard functions={data?.functions} />
       <ProcessCard processes={data?.process} />
+      <Footer />
     </PageLayout>
   )
 }

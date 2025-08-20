@@ -24,7 +24,13 @@ export default function FeaturedProjectsCard({ projects }: IFeaturedProjectsCard
       <Stack mt={4} gap={2}>
         {projects?.map((project) => {
           return (
-            <Box key={project.id}>
+            <Box
+              key={project.id}
+              id={project.id as unknown as string}
+              _open={{
+                animation: 'fade-in 300ms ease-out',
+              }}
+            >
               <CardCustom
                 h="275px"
                 imageProps={{ src: project.image, w: '300px', h: 'full' }}

@@ -1,18 +1,58 @@
-import { Typography } from '@/components/Typography'
-import { HOME_JSON_PATH } from '@/constants/paths'
+import { HOME_JSON_PATH, WORKS_JSON_PATH } from '@/constants/paths'
 import PageLayout from '@/layout/PageLayout'
 import { fetcher } from '@/util'
 import useSWR from 'swr'
+import IntroductionCard from './IntroductionCard'
+import type { IHomeData } from '@/types/Home'
+import ButtonGroup from './ButtonGroup'
+import OverviewCard from './OverviewCard'
+import Expertise from './Expertise'
+import type { IWorksData } from '@/types/Works'
+import RecentProjects from './RecentProjects'
+import Footer from '@/components/Footer'
 
 export default function HomePage() {
-  const { data, error, isLoading } = useSWR(HOME_JSON_PATH, fetcher)
+  const { data, error, isLoading } = useSWR<IHomeData>(HOME_JSON_PATH, fetcher)
+  const {
+    data: works,
+    error: errorWorks,
+    isLoading: isLoadingWorks,
+  } = useSWR<IWorksData>(WORKS_JSON_PATH, fetcher)
 
-  if (isLoading) return <p>Loading...</p>
-  if (error) return <p>Failed to load data</p>
+  if (isLoading || isLoadingWorks) return <p>Loading...</p>
+  if (error || errorWorks) return <p>Failed to load data</p>
+
+  const worksData = works?.featured_projects
+    ?.sort((a, b) => b.timeline.localeCompare(a.timeline))
+    .slice(0, 3)
 
   return (
-    <PageLayout>
-      <Typography>{data?.intro}</Typography>
+    <PageLayout
+      topSection={
+        <>
+          <IntroductionCard
+            title={data?.name}
+            subtitle={data?.subtitle}
+            description={data?.description}
+          />
+          <ButtonGroup github_link={data?.github_url} works_link="works" />
+          <OverviewCard
+            private_contributions={data?.private_contributions}
+            academic_projects={data?.academic_projects}
+            learning_projects={data?.learning_projects}
+            technologies={data?.technologies}
+          />
+        </>
+      }
+    >
+      <Expertise
+        frontend={data?.frontend}
+        backend={data?.backend}
+        database={data?.database}
+        tools={data?.tools}
+      />
+      <RecentProjects projects={worksData} />
+      <Footer />
     </PageLayout>
   )
 }

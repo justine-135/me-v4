@@ -11,6 +11,8 @@ import ViewCodeCard from '../components/ViewCodeCard'
 import FunctionalitiesCard from '../components/FunctionalitiesCard'
 import ChallengesSolutionsCard from './components/ChallengesSolutionsCard'
 import { useScrollToTop } from '@/hooks/useScrollToTop'
+import OverviewCard from '../components/OverviewCard'
+import Footer from '@/components/Footer'
 
 export default function SideProjectsPage() {
   const param = useParams()
@@ -33,9 +35,11 @@ export default function SideProjectsPage() {
         </>
       }
     >
+      <OverviewCard description={data?.description} />
       <ProjectVisualsCard imageUrls={data?.image_urls} />
       <FunctionalitiesCard functions={data?.functions} />
       <ChallengesSolutionsCard challenges={data?.challenges} />
+      <Footer />
     </PageLayout>
   )
 }

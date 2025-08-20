@@ -23,7 +23,14 @@ export default function SideProjects({ projects }: ISideProjectsProps) {
       <Grid mt={4} gap={6} templateColumns="repeat(3, 1fr)" alignItems="stretch">
         {projects?.map((project) => {
           return (
-            <GridItem key={project.id} h="100%">
+            <GridItem
+              key={project.id}
+              id={project.id as unknown as string}
+              h="100%"
+              _open={{
+                animation: 'fade-in 300ms ease-out',
+              }}
+            >
               <CardCustom imageProps={{ src: project.image }} h="full">
                 <Flex flexDirection="column" gap={4} h="full">
                   <HStack justifyContent="space-between">

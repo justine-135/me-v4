@@ -5,11 +5,14 @@ import useSWR from 'swr'
 import IntroductionCard from './components/IntroductionCard'
 import type { IWorksData } from '@/types/Works'
 import FeaturedProjectsCard from './components/FeaturedProjectsCard'
-import StackLayout from '@/layout/StackLayout'
 import SideProjects from './components/SideProjects'
+import { useScrollToId } from '@/hooks/useScrollToId'
+import { Stack } from '@chakra-ui/react/stack'
+import Footer from '@/components/Footer'
 
 export default function WorksPage() {
   const { data, error, isLoading } = useSWR<IWorksData>(WORKS_JSON_PATH, fetcher)
+  useScrollToId()
 
   if (isLoading) return <p>Loading...</p>
   if (error) return <p>Failed to load data</p>
@@ -21,11 +24,12 @@ export default function WorksPage() {
 
   return (
     <PageLayout title="Works">
-      <StackLayout>
+      <Stack gap={8}>
         <IntroductionCard intro={data?.intro} />
         <FeaturedProjectsCard projects={featureProjects} />
         <SideProjects projects={sideProjects} />
-      </StackLayout>
+        <Footer />
+      </Stack>
     </PageLayout>
   )
 }

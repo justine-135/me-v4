@@ -43,9 +43,13 @@ export default function PageLayout({
     <Stack gap={4} as="section">
       <Stack alignItems="start">
         {showBackBtn && <BackButton />}
-        {title && <Typography variant="heading">{title}</Typography>}
+        {title && (
+          <Typography variant="heading" as="h1">
+            {title}
+          </Typography>
+        )}
       </Stack>
-      <Stack gap={6} maxW="5xl">
+      <Stack gap={6} maxW="4xl">
         {/* Top section */}
         {topSection && <StackLayout>{topSection}</StackLayout>}
         <FlexboxLayout>

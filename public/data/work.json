@@ -135,6 +135,18 @@
       "timeline": "2025",
       "link_url": "https://github.com/justine-135/social-app",
       "is_showcase": true
+    },
+    {
+      "id": 12,
+      "title": "Acme",
+      "image": "/images/sides/acme.png",
+      "description": "Application or tutorial project provided by the official Next.js documentation, specifically the 'ACME Dashboard' project.",
+      "is_featured": false,
+      "tags": ["nextjs", "typescript", "tailwindcss", "vercel", "postgresql"],
+      "project_type": ["Side project", "Learning project"],
+      "timeline": "2024",
+      "link_url": "https://github.com/justine-135/acme",
+      "live_url": "https://nextjs-dashboard-psi-orcin-52.vercel.app/dashboard"
     }
   ]
 }
