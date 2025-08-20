@@ -1,6 +1,7 @@
-import { Flex } from '@chakra-ui/react'
+import { Box, Flex } from '@chakra-ui/react'
 import { ToggleThemeButton } from './Button/ToggleThemeButton'
 import useThemeValues from '@/hooks/useThemeValues'
+import AvailableBadge from './Badge/AvailableBadge'
 
 export default function Header() {
   const { background } = useThemeValues()
@@ -19,10 +20,10 @@ export default function Header() {
       zIndex={3}
       as="header"
     >
-      <div>Justine Upano</div>
-      <div>
-        <ToggleThemeButton />
-      </div>
+      <Box>
+        <AvailableBadge />
+      </Box>
+      <ToggleThemeButton />
     </Flex>
   )
 }

@@ -1,10 +1,11 @@
 import { Typography } from '@/components/Typography'
 import CardCustom from '@/components/CardCustom'
-import { Badge, Stack } from '@chakra-ui/react'
+import { Stack } from '@chakra-ui/react'
+import AvailableBadge from '@/components/Badge/AvailableBadge'
 
 export default function IntroductionCard() {
   return (
-    <CardCustom cardTitle={<Badge colorPalette="green">Available for work</Badge>} as="section">
+    <CardCustom cardTitle={<AvailableBadge />} as="section">
       <Stack gap={2}>
         <Typography variant="heading">Let's work together</Typography>
         <Typography>

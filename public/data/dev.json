@@ -1,0 +1,23 @@
+{
+  "name": "Justine Upano",
+  "subtitle": "Web Developer",
+  "is_available": true,
+  "working_on": "Private company projects",
+  "learning_on": "Design Principles",
+  "location": "Manila, PH",
+  "time": "PHT (UTC+8)",
+  "socials": [
+    {
+      "name": "Github",
+      "url": "https://github.com/justine-135"
+    },
+    {
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/in/justineupano/"
+    },
+    {
+      "name": "Mail",
+      "url": "mailto:justineupano87@gmail.com"
+    }
+  ]
+}

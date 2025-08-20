@@ -4,7 +4,7 @@ import { Flex } from '@chakra-ui/react/flex'
 import { Box } from '@chakra-ui/react/box'
 import { Button } from '@chakra-ui/react/button'
 import useThemeValues from '@/hooks/useThemeValues'
-import { Typography } from '@/components/Typography'
+import { Text } from '@chakra-ui/react'
 
 interface INavLinkProps {
   icon: string
@@ -36,7 +36,7 @@ export default function NavLink({ icon, label, id }: INavLinkProps) {
       >
         <Flex spaceX="4" w="100%">
           <Box>{icon}</Box>
-          <Typography>{label}</Typography>
+          <Text fontWeight={400}>{label}</Text>
         </Flex>
       </Button>
     </List.Item>
