@@ -5,17 +5,24 @@ import { Typography } from '../Typography'
 import { BiLaptop } from 'react-icons/bi'
 import { FaChartLine } from 'react-icons/fa'
 import { PiNeedle } from 'react-icons/pi'
+import type { IconType } from 'react-icons'
 
 interface ISectionsProps {
   title: ReactNode
+  Icon: IconType
   value: ReactNode
 }
 
-const Section = ({ title, value }: ISectionsProps) => {
+const Section = ({ title, value, Icon }: ISectionsProps) => {
   return (
     <CardCustom p={0} cardBodyProps={{ p: 2 }}>
       <Stack>
-        {title}
+        <HStack>
+          <Icon />
+          <Typography fontWeight={500} fontSize="xs">
+            {title}
+          </Typography>
+        </HStack>
         <Text fontSize="xs">{value}</Text>
       </Stack>
     </CardCustom>
@@ -37,41 +44,16 @@ export default function CurrentlySection({
 }: ICurrentlySectionProps) {
   return (
     <Stack>
+      <Section title="WORKING ON" Icon={BiLaptop} value={working_on} />
+      <Section title="LEARNING ON" Icon={FaChartLine} value={learning_on} />
       <Section
-        title={
-          <Typography fontWeight={500} fontSize="xs">
-            <HStack>
-              <BiLaptop />
-              WORKING ON
-            </HStack>
-          </Typography>
-        }
-        value={working_on}
-      />
-      <Section
-        title={
-          <Typography fontWeight={500} fontSize="xs">
-            <HStack>
-              <FaChartLine />
-              LEARNING ON
-            </HStack>
-          </Typography>
-        }
-        value={learning_on}
-      />
-      <Section
-        title={
-          <Typography fontWeight={500} fontSize="xs">
-            <HStack>
-              <PiNeedle />
-              LOCATION & TIME
-            </HStack>
-          </Typography>
-        }
+        title="
+              LOCATION & TIME"
+        Icon={PiNeedle}
         value={
           <>
-            <Text>{location}</Text>
-            <Text>{time}</Text>
+            <>{location}</>
+            <>{time}</>
           </>
         }
       />

@@ -12,8 +12,8 @@ import {
   GridItem,
   Button,
 } from '@chakra-ui/react'
-import { useState } from 'react'
 import { BsEye } from 'react-icons/bs'
+import useViewMore from '@/hooks/useViewMore'
 
 interface IProjectVisualsCardProps {
   imageUrls?: string[]
@@ -50,18 +50,10 @@ const Thumbnail = ({ src }: { src: string }) => {
   )
 }
 
-const SHOW_LIMIT = 3
-
 const ImagesGrid = ({ imageUrls }: IProjectVisualsCardProps) => {
-  const [limit, setLimit] = useState<number>(3)
-
-  const limitedImageUrls = imageUrls?.slice(0, limit) ?? []
-  const subtractedValue = (imageUrls?.length ?? 0) - limit
-  const leftOverImages = Math.max((imageUrls?.length ?? 0) - limit, 0)
-
-  const handleButtonClick = () => {
-    setLimit((prevLimit) => prevLimit + SHOW_LIMIT)
-  }
+  const { limitedImageUrls, shouldShowButton, leftOverImages, handleIncreaseLimit } = useViewMore({
+    arr: imageUrls,
+  })
 
   return (
     <VStack>
@@ -76,8 +68,8 @@ const ImagesGrid = ({ imageUrls }: IProjectVisualsCardProps) => {
           })}
         </Grid>
       </Box>
-      {subtractedValue > 0 && (
-        <Button onClick={handleButtonClick} size="xs">
+      {shouldShowButton && (
+        <Button onClick={handleIncreaseLimit} size="xs">
           <BsEye /> View more visuals ({leftOverImages})
         </Button>
       )}
