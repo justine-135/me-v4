@@ -5,6 +5,7 @@ import { Box } from '@chakra-ui/react/box'
 import { Button } from '@chakra-ui/react/button'
 import useThemeValues from '@/hooks/useThemeValues'
 import { Text } from '@chakra-ui/react'
+import { useSidebarDrawerContext } from '@/hooks/useSidebarDrawerContext'
 
 interface INavLinkProps {
   icon: string
@@ -16,12 +17,14 @@ export default function NavLink({ icon, label, id }: INavLinkProps) {
   const location = useLocation()
   const navigate = useNavigate()
   const { backgroundAccent } = useThemeValues()
+  const { setOpen, open } = useSidebarDrawerContext()
 
   const path = `/${id}`
   const isPath = path === location.pathname
 
   const handleNavigate = () => {
     navigate(path)
+    setOpen?.(!open)
   }
 
   return (

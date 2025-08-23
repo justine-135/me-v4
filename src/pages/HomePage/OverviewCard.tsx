@@ -36,12 +36,7 @@ export default function OverviewCard({
   technologies,
 }: IOverviewCardProps) {
   return (
-    <Flex
-      gap={4}
-      wrap="wrap"
-      direction={{ sm: 'column', mdToLg: 'column', md: 'row' }}
-      as="section"
-    >
+    <Flex gap={4} wrap="wrap" direction={{ base: 'column', md: 'row' }} as="section">
       <CardSummary
         value={`${private_contributions}+`}
         title="Private contributions"

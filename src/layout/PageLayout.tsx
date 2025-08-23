@@ -57,12 +57,12 @@ export default function PageLayout({
         {topSection && <StackLayout>{topSection}</StackLayout>}
         <FlexboxLayout>
           {/* Main section */}
-          <StackLayout flex={1} as="section" w={{ mdToLg: '100%', md: '70%' }}>
+          <StackLayout flex={1} as="section" w={{ base: '100%', md: '70%' }}>
             {children}
           </StackLayout>
           {/* Right side section */}
           {asideSection && (
-            <StackLayout as="aside" w={{ mdToLg: '100%', md: '30%' }}>
+            <StackLayout as="aside" w={{ base: '100%', md: '30%' }}>
               {asideSection}
             </StackLayout>
           )}

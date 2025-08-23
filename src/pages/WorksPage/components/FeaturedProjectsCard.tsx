@@ -3,7 +3,7 @@ import { ReadMoreButton } from '@/components/Button/ReadMoreButton'
 import CardCustom from '@/components/CardCustom'
 import { Typography } from '@/components/Typography'
 import type { IProjects } from '@/types/Works'
-import { Badge, Box, HStack, Stack } from '@chakra-ui/react'
+import { Badge, Box, Flex, HStack, Stack } from '@chakra-ui/react'
 import { BsDot } from 'react-icons/bs'
 import { FaGithub } from 'react-icons/fa'
 
@@ -32,15 +32,22 @@ export default function FeaturedProjectsCard({ projects }: IFeaturedProjectsCard
               }}
             >
               <CardCustom
-                h="275px"
-                imageProps={{ src: project.image, w: '300px', h: 'full' }}
-                flexDirection="row"
+                h="auto"
+                imageProps={{
+                  src: project.image,
+                  w: { base: 'full', md: '300px' },
+                  h: '300px',
+                  roundedTopLeft: 'md',
+                  roundedBottomLeft: { base: 'none', md: 'md' },
+                  roundedTopRight: { base: 'md', md: 'none' },
+                }}
+                flexDirection={{ base: 'column', md: 'row' }}
               >
                 <Stack alignItems="start" flex={3}>
                   <Box mb={2}>
                     <Typography variant="subheading">{project.title}</Typography>
                   </Box>
-                  <HStack>
+                  <Flex alignItems="center" gap={2} wrap="wrap">
                     <Typography fontSize="xs">{project.role}</Typography>
                     <BsDot />
                     <Typography fontSize="xs">{project.project_type}</Typography>
@@ -48,7 +55,7 @@ export default function FeaturedProjectsCard({ projects }: IFeaturedProjectsCard
                     <Badge variant="outline">{project.duration}</Badge>
                     <BsDot />
                     <Badge variant="outline">{project.timeline}</Badge>
-                  </HStack>
+                  </Flex>
                   <Typography lineHeight="2">{project.description}</Typography>
                   <HStack wrap="wrap" mb={4}>
                     {project.tags.map((tag, idx) => {

@@ -30,7 +30,7 @@ export default function CardCustom({
         </Card.Header>
       )}
       {imageProps?.src && (
-        <Box overflow="hidden" rounded="md">
+        <Box overflow="hidden">
           <Image
             h={180}
             alt="Project image"

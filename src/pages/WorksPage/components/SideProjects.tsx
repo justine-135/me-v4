@@ -36,11 +36,10 @@ export default function SideProjects({ projects }: ISideProjectsProps) {
           mt={4}
           gap={6}
           templateColumns={{
-            smToMd: 'repeat(1, 1fr)',
-            mdToLg: 'repeat(2, 1fr)',
-            md: 'repeat(3, 1fr)',
+            base: 'repeat(1, 1fr)',
+            lg: 'repeat(3, 1fr)',
           }}
-          alignItems="stretch"
+          // alignItems="stretch"
         >
           {limitedProjects?.map((project) => {
             return (
@@ -48,11 +47,12 @@ export default function SideProjects({ projects }: ISideProjectsProps) {
                 key={project.id}
                 id={project.id as unknown as string}
                 h="100%"
+                w="auto"
                 _open={{
                   animation: 'fade-in 300ms ease-out',
                 }}
               >
-                <CardCustom imageProps={{ src: project.image }} h="full">
+                <CardCustom imageProps={{ src: project.image, roundedTop: 'md' }} h="full">
                   <Flex flexDirection="column" gap={4} h="full">
                     <HStack justifyContent="space-between">
                       <HStack>

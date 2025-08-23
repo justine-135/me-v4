@@ -10,7 +10,7 @@ interface IButtonGroup {
 
 export default function ButtonGroup({ github_link, works_link }: IButtonGroup) {
   return (
-    <Flex gap={2}>
+    <Flex gap={2} wrap="wrap">
       <ReadMoreButton path={works_link}>View my works</ReadMoreButton>
       <Button size="sm" variant="outline">
         Download Resume

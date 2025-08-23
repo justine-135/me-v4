@@ -2,6 +2,7 @@ import { Box, Flex } from '@chakra-ui/react'
 import { ToggleThemeButton } from './Button/ToggleThemeButton'
 import useThemeValues from '@/hooks/useThemeValues'
 import AvailableBadge from './Badge/AvailableBadge'
+import { SidebarDrawer } from './Sidebar/SidebarDrawer'
 
 export default function Header() {
   const { background } = useThemeValues()
@@ -14,7 +15,7 @@ export default function Header() {
       alignItems="center"
       h="48px"
       w="100%"
-      paddingX="2rem"
+      paddingX={{ base: 4, sm: 8 }}
       background={background}
       borderBottomWidth="1px"
       zIndex={3}
@@ -23,7 +24,12 @@ export default function Header() {
       <Box>
         <AvailableBadge />
       </Box>
-      <ToggleThemeButton />
+      <Box display={{ base: 'none', sm: 'block' }}>
+        <ToggleThemeButton />
+      </Box>
+      <Box display={{ base: 'block', sm: 'none' }}>
+        <SidebarDrawer />
+      </Box>
     </Flex>
   )
 }

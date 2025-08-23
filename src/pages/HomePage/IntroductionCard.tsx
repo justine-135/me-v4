@@ -11,7 +11,7 @@ export default function IntroductionCard({ description, subtitle }: IIntroductio
     <Stack as="section" gap={4}>
       <Typography>{subtitle}</Typography>
       <Separator />
-      <Text w="3xl">{description}</Text>
+      <Text maxW="3xl">{description}</Text>
     </Stack>
   )
 }

@@ -38,7 +38,7 @@ export default function Expertise({ frontend, backend, database, tools }: IExper
         <Typography>
           Technologies and tools I'm mastering to build modern web applications
         </Typography>
-        <Flex>
+        <Flex wrap="wrap" gap={4}>
           <Section title="Frontend" values={frontend} />
           <Section title="Backend" values={backend} />
           <Section title="Database" values={database} />

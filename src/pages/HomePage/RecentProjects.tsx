@@ -2,7 +2,7 @@ import LinkButton from '@/components/Button/LinkButton'
 import CardCustom from '@/components/CardCustom'
 import { Typography } from '@/components/Typography'
 import type { IProjects } from '@/types/Works'
-import { Badge, Flex, HStack, Stack } from '@chakra-ui/react'
+import { Badge, Flex, Stack } from '@chakra-ui/react'
 import { BsDot } from 'react-icons/bs'
 
 interface IRecentProjectsProps {
@@ -42,7 +42,7 @@ export default function RecentProjects({ projects }: IRecentProjectsProps) {
               key={project.id}
             >
               <Stack>
-                <HStack gap={2}>
+                <Flex wrap="wrap" alignItems="center" gap={2}>
                   {project.project_type.map((type, id) => {
                     return (
                       <Badge key={id} variant="outline">
@@ -52,7 +52,7 @@ export default function RecentProjects({ projects }: IRecentProjectsProps) {
                   })}
                   <BsDot />
                   <Typography>{project.timeline}</Typography>
-                </HStack>
+                </Flex>
                 <Typography>{project.description}</Typography>
               </Stack>
             </CardCustom>
