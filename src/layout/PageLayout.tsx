@@ -8,6 +8,7 @@ import { BsArrowLeft } from 'react-icons/bs'
 import useThemeValues from '@/hooks/useThemeValues'
 import StackLayout from './StackLayout'
 import { useScrollToTop } from '@/hooks/useScrollToTop'
+import { Separator } from '@chakra-ui/react/separator'
 
 const BackButton = () => {
   const navigate = useNavigate()
@@ -27,32 +28,40 @@ const BackButton = () => {
 
 interface IPageLayoutProps {
   title?: string
+  subtitle?: string
   children: React.ReactNode
   showBackBtn?: boolean
   topSection?: React.ReactNode
   asideSection?: React.ReactNode
+  footerSection?: React.ReactNode
 }
 
 export default function PageLayout({
   title,
+  subtitle,
   children,
   showBackBtn = false,
   topSection,
   asideSection,
+  footerSection,
 }: IPageLayoutProps) {
   useScrollToTop()
 
   return (
     <Stack gap={4} as="section">
-      <Stack alignItems="start">
-        {showBackBtn && <BackButton />}
-        {title && (
-          <Typography variant="heading" as="h1">
-            {title}
-          </Typography>
-        )}
-      </Stack>
       <Stack gap={6} maxW="4xl">
+        <Stack alignItems="start">
+          {showBackBtn && <BackButton />}
+          <Stack w="full">
+            {title && (
+              <Typography variant="heading" as="h1">
+                {title}
+              </Typography>
+            )}
+            {subtitle && <Typography>{subtitle}</Typography>}
+            {subtitle && title && <Separator />}
+          </Stack>
+        </Stack>
         {/* Top section */}
         {topSection && <StackLayout>{topSection}</StackLayout>}
         <FlexboxLayout>
@@ -66,6 +75,10 @@ export default function PageLayout({
               {asideSection}
             </StackLayout>
           )}
+        </FlexboxLayout>
+        {/* Footer section */}
+        <FlexboxLayout flexDirection="column" as="section" w="full">
+          {footerSection}
         </FlexboxLayout>
       </Stack>
     </Stack>

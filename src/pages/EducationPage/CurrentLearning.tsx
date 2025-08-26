@@ -12,7 +12,7 @@ export default function CurrentLearning({ skills }: ICurrentLearningProps) {
   const { backgroundAccent } = useThemeValues()
 
   return (
-    <CardCustom cardTitle="Currently learning" as="section">
+    <CardCustom cardTitle="Currently learning" variant={'none' as never} as="section">
       <Stack gap={4}>
         {skills?.map((skill, idx) => {
           const { title, description } = skill

@@ -17,6 +17,7 @@ export default function AboutPage() {
   return (
     <PageLayout
       title="About"
+      subtitle="Learn more about my background and experience"
       asideSection={
         <>
           <SkillsCard skills={data?.skills} />

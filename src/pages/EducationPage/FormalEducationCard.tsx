@@ -8,7 +8,7 @@ interface IFormalEducationCard {
 
 export default function FormalEducationCard({ education }: IFormalEducationCard) {
   return (
-    <CardCustom cardTitle="Formal education" as="section">
+    <CardCustom cardTitle="Formal education" variant={'none' as never} as="section">
       <TimelineCustom data={education || []} />
     </CardCustom>
   )

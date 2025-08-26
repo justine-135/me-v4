@@ -12,13 +12,11 @@
       "subtitle": "New Stars Solutions Inc.",
       "date": "September 2023 - Present",
       "details": [
-        "Built and maintained scalable, mobile-responsive user interfaces using ReactJS and SCSS, enhancing user experience across multiple devices.",
-        "Contributed to internal UI component libraries and documented usage for team scalability.",
-        "Collaborated with backend developers and designers to implement clean, efficient, and scalable UIs.",
-        "Applied performance profiling and debugging techniques using Chrome DevTools and React Developer Tools.",
+        "Pioneered the revamp of a back-office, affiliate, and member-facing web application of an international gaming firm.",
+        "Involved in the development and maintenance of reusable components by utilizing AntD and Shopify Polaris.",
+        "Incorporated RESTful APIs into the frontend of the application to enable communication with backend services.",
         "Reviewed, and supported code from a team member to ensure it follows correct team guidelines and practices in implementing solutions.",
-        "Actively participated in daily meetings, identifying issues early and providing constructive suggestions to enhance team efficiency and project outcomes.",
-        "Helped onboard new team members by walking them through codebase architecture and front-end workflows."
+        "Actively participated with multinational teams in daily meetings, identifying issues early and providing constructive suggestions to enhance team efficiency and project outcomes."
       ],
       "technologies": ["reactjs", "nextjs", "typescript", "scss", "restapi"],
       "current": true

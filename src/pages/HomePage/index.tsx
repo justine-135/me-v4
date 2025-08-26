@@ -29,6 +29,7 @@ export default function HomePage() {
   return (
     <PageLayout
       title={data?.name}
+      subtitle={data?.subtitle}
       topSection={
         <>
           <IntroductionCard subtitle={data?.subtitle} description={data?.description} />

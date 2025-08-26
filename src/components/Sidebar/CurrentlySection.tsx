@@ -52,8 +52,7 @@ export default function CurrentlySection({
         Icon={PiNeedle}
         value={
           <>
-            <>{location}</>
-            <>{time}</>
+            <>{location}</>-<>{time}</>
           </>
         }
       />

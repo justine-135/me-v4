@@ -47,13 +47,13 @@ export default function FeaturedProjectsPage() {
           <ViewCodeCard href={data?.link_url} />
         </>
       }
+      footerSection={<Footer />}
     >
       <OverviewCard description={data?.description} />
       <ProjectVisualsCard imageUrls={data?.image_urls} />
       <ProblemSolutionCard problem={data?.problem} answer={data?.answer} />
       <FunctionalitiesCard functions={data?.functions} />
       <ProcessCard processes={data?.process} />
-      <Footer />
     </PageLayout>
   )
 }

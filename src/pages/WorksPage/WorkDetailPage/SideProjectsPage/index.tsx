@@ -32,12 +32,12 @@ export default function SideProjectsPage() {
           <ViewCodeCard href={data?.link_url} />
         </>
       }
+      footerSection={<Footer />}
     >
       <OverviewCard description={data?.description} />
       <ProjectVisualsCard imageUrls={data?.image_urls} />
       <FunctionalitiesCard functions={data?.functions} />
       <ChallengesSolutionsCard challenges={data?.challenges} />
-      <Footer />
     </PageLayout>
   )
 }

@@ -7,7 +7,7 @@ interface IDevelopmentSkillsCardProps {
 }
 export default function DevelopmentSkillsCard({ skills }: IDevelopmentSkillsCardProps) {
   return (
-    <CardCustom cardTitle="Development skills" as="section">
+    <CardCustom cardTitle="Development skills" variant={'none' as never} as="section">
       <Stack gap={2}>
         {skills?.map((skill, idx) => {
           return <Typography key={idx}>{skill}</Typography>

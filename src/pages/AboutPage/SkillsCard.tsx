@@ -11,7 +11,7 @@ interface ISkillsCardProps {
 
 export const SkillsCard = ({ skills }: ISkillsCardProps) => {
   return (
-    <CardCustom cardTitle="Skills" as="section">
+    <CardCustom cardTitle="Skills" variant={'none' as never} as="section">
       <Stack gap={4}>
         {skills?.map((skill) => {
           return (

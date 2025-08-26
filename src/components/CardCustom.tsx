@@ -1,4 +1,4 @@
-import { Card, type CardRootProps, type CardBodyProps } from '@chakra-ui/react/card'
+import { Card, type CardRootProps, type CardBodyProps } from '@chakra-ui/react'
 import { Image, type ImageProps } from '@chakra-ui/react/image'
 import React from 'react'
 import { Typography } from './Typography'

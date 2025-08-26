@@ -1,6 +1,5 @@
 import PageLayout from '@/layout/PageLayout'
 import FormalEducationCard from './FormalEducationCard'
-import IntroductionCard from './IntroductionCard'
 import CurrentLearning from './CurrentLearning'
 import DevelopmentSkillsCard from './DevelopmentSkillsCard'
 import useSWR from 'swr'
@@ -17,6 +16,7 @@ export default function EducationPage() {
   return (
     <PageLayout
       title="Education"
+      subtitle={data?.intro}
       asideSection={
         <>
           <CurrentLearning skills={data?.hard_skills_learn} />
@@ -24,7 +24,6 @@ export default function EducationPage() {
         </>
       }
     >
-      <IntroductionCard intro={data?.intro} />
       <FormalEducationCard education={data?.education} />
     </PageLayout>
   )
