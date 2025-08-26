@@ -1,5 +1,4 @@
-import { LuCheck } from 'react-icons/lu'
-import { HStack, Timeline, Badge, type TimelineRootProps, Stack } from '@chakra-ui/react'
+import { HStack, Timeline, Badge, type TimelineRootProps, Stack, Separator } from '@chakra-ui/react'
 
 interface ITimelineData {
   title: string
@@ -18,18 +17,17 @@ const TimelineItem = ({ title, subtitle, details, date, current, badges }: ITime
   return (
     <Timeline.Item>
       <Timeline.Connector>
-        <Timeline.Separator />
-        <Timeline.Indicator background={`${current && 'green.300'}`}>
-          <LuCheck />
-        </Timeline.Indicator>
+        {/* <Timeline.Separator /> */}
+        <Separator orientation="vertical" h="full" />
       </Timeline.Connector>
-      <Timeline.Content>
-        <Stack mb={2} gap={0}>
+      <Timeline.Content pb={0}>
+        <Stack mb={2} gap={1}>
           <HStack justifyContent="space-between">
             <Timeline.Title>{title}</Timeline.Title>
-            <Badge variant="outline">{date}</Badge>
+            {current && <Badge variant="outline">Current</Badge>}
           </HStack>
           <Timeline.Description>{subtitle}</Timeline.Description>
+          <Timeline.Description>{date}</Timeline.Description>
         </Stack>
         <Stack gap={4}>
           <Stack>
@@ -52,7 +50,7 @@ const TimelineItem = ({ title, subtitle, details, date, current, badges }: ITime
 
 export default function TimelineCustom({ data, ...rest }: ITimelineCustomProps) {
   return (
-    <Timeline.Root variant="subtle" {...rest}>
+    <Timeline.Root variant="subtle" gap={6} {...rest}>
       {data.map((items, idx) => {
         return <TimelineItem {...items} key={idx} />
       })}
