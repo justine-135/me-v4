@@ -31,7 +31,7 @@ export const Typography: React.FC<TypographyProps> = ({ variant = 'body', childr
   }
 
   return (
-    <Text {...variantStyles[variant]} {...rest}>
+    <Text {...variantStyles[variant]} wordWrap="break-word" {...rest}>
       {children}
     </Text>
   )

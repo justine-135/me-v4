@@ -8,7 +8,7 @@ const NameCard = ({ name }: { name: string }) => {
     <CardCustom rounded="lg" cardBodyProps={{ p: 2 }}>
       <HStack>
         <AvatarCustom fallback={name} size="sm" variant="solid" />
-        <Typography>{name}</Typography>
+        <Typography wordBreak="break-all">{name}</Typography>
       </HStack>
     </CardCustom>
   )

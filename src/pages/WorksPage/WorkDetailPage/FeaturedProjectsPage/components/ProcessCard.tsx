@@ -23,7 +23,7 @@ export default function ProcessCard({ processes }: IProcessCardProps) {
                 <Stack>
                   <Typography variant="subheading">{title}</Typography>
                   <List.Root mt={2}>
-                    <Box columnCount={2} spaceY={4}>
+                    <Box columnCount={{ base: 1, sm: 2 }} spaceY={4}>
                       {details?.map((detail, idx) => {
                         return (
                           <List.Item key={idx}>

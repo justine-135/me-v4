@@ -42,7 +42,7 @@ export default function RoleDuration({
   })
 
   return (
-    <Flex gap={4} wrap="wrap" direction={{ smToLg: 'column', md: 'row' }} as="section">
+    <Flex gap={4} wrap="wrap" direction={{ base: 'column', md: 'row' }} as="section">
       <CardSummary icon="⌛" title="Timeline" body={timeline} footer={duration} />
       <CardSummary icon="👨‍💻" title="My role" body={role} />
       <CardSummary icon="⚒️" title="Project type" body={<>{types}</>} />

@@ -58,7 +58,7 @@ const ImagesGrid = ({ imageUrls }: IProjectVisualsCardProps) => {
   return (
     <VStack>
       <Box>
-        <Grid templateColumns="repeat(3, 1fr)" gap={2}>
+        <Grid templateColumns={{ base: 'repeat(1, 1fr)', sm: 'repeat(3, 1fr)' }} gap={2}>
           {limitedImageUrls?.map((imageUrl, idx) => {
             return (
               <GridItem key={idx}>

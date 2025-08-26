@@ -18,7 +18,7 @@ const BackButton = () => {
     <Button
       onClick={() => navigate(-1)}
       variant="plain"
-      size="sm"
+      size={{ base: 'xs', sm: 'sm' }}
       _hover={{ background: backgroundAccent }}
     >
       <BsArrowLeft /> <Typography>Back</Typography>
@@ -49,7 +49,7 @@ export default function PageLayout({
 
   return (
     <Stack gap={4} as="section">
-      <Stack gap={6} maxW="4xl">
+      <Stack gap={{ base: 2, sm: 6 }} maxW="4xl">
         <Stack alignItems="start">
           {showBackBtn && <BackButton />}
           <Stack w="full">
@@ -71,7 +71,7 @@ export default function PageLayout({
           </StackLayout>
           {/* Right side section */}
           {asideSection && (
-            <StackLayout as="aside" w={{ base: '100%', md: '30%' }}>
+            <StackLayout as="aside" minW="186px" w={{ base: '100%', md: '30%' }}>
               {asideSection}
             </StackLayout>
           )}

@@ -31,7 +31,7 @@ export default function ProblemSolutionCard({ problem, answer }: IProblemSolutio
 
   return (
     <CardCustom cardTitle="Problem & solution" as="section">
-      <Flex gap={5}>
+      <Flex flexDirection={{ base: 'column', md: 'row' }} gap={5}>
         <DataCard label="Problem" value={problem} color="red" />
         <DataCard label="Solution" value={answer} color="blue" />
       </Flex>
