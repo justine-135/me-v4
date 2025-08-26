@@ -1,6 +1,7 @@
 {
   "title": "Restaurant Ordering System",
-  "description": "Most restaurants had inefficient customer service, as researchers found. Calling customers by name or number, though it may work in small places, could slow things down and get confusing. This might be okay for small eateries, but as businesses grow, manual monitoring could become a problem.",
+  "description": "Dining experiences today are shaped not only by food quality but also by efficiency and customer convenience. Restaurants, especially local establishments like Dadz Grillhouse, benefit greatly from digital enhancements that modernize their service and strengthen customer engagement.",
+  "overview": "This project delivers a custom-built ordering system tailored for Dadz Grillhouse. It centralizes order management, improves communication between staff and kitchen, and provides a smoother dining workflow. The system embodies the growing shift toward digital solutions in the food industry, demonstrating how even small businesses can harness technology to elevate operations.",
   "problem": "When helping clients in a busy and chaotic place, staff faced understandable challenges. Manual work took too long and got stressful as more customers came in, so it wasn't a viable solution. Customers got frustrated because it was hard to grab staff attention for help. If tables weren't cleared, customers waited longer, creating an ongoing delay.",
   "answer": "To address the issue, researchers suggested a Restaurant Ordering System. This system would track occupied tables, bills, customer needs, and finished meals, reducing the need for physical monitoring. This allowed staff to focus on tasks and avoid distractions.",
   "image_urls": [

@@ -34,6 +34,7 @@ export interface IWorkDetail {
   improvements: string[]
   technology: string[]
   link_url: string
+  overview: string
 }
 
 export interface IFeaturedProject extends IWorkDetail {

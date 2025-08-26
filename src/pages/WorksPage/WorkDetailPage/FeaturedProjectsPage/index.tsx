@@ -49,7 +49,7 @@ export default function FeaturedProjectsPage() {
       }
       footerSection={<Footer />}
     >
-      <OverviewCard description={data?.description} />
+      <OverviewCard description={data?.overview} />
       <ProjectVisualsCard imageUrls={data?.image_urls} />
       <ProblemSolutionCard problem={data?.problem} answer={data?.answer} />
       <FunctionalitiesCard functions={data?.functions} />

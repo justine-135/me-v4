@@ -1,6 +1,7 @@
 {
   "title": "Motion Capture System",
-  "description": "We developed a motion capture app using Python and NextJS for our final project in our subject Embedded Systems. We used Python with packages to enable movement sensing during oncam and call an API to record the start time, end time, and the captured image as BLOB file. To authenticate users to the web system, we used the NextAuth package and bcrypt to hash passwords to the database.",
+  "description": "In my Full Stack Web Development course, I worked on a project that explored how basic motion detection can be achieved using just a webcam and web technologies. The goal was to experiment with computer vision concepts in a simple yet practical way, turning theoretical ideas into a working prototype.",
+  "overview": "The project captures movement through a webcam, detects when motion occurs, and automatically takes a screenshot that is stored in a database. While limited compared to advanced motion capture systems, it demonstrates the integration of front-end interaction with back-end storage, highlighting skills in real-time detection, data handling, and full-stack implementation.",
   "image_urls": ["/images/motion_capture/login.gif", "/images/motion_capture/home.gif"],
   "duration": "3 months",
   "timeline": "2023",
