@@ -33,7 +33,11 @@ export default function HomePage() {
       topSection={
         <>
           <IntroductionCard subtitle={data?.subtitle} description={data?.description} />
-          <ButtonGroup github_link={data?.github_url} works_link="works" />
+          <ButtonGroup
+            github_link={data?.github_url}
+            works_link="works"
+            resume_url={data?.resume_url}
+          />
           <OverviewCard
             private_contributions={data?.private_contributions}
             academic_projects={data?.academic_projects}

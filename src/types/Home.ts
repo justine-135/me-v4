@@ -11,4 +11,5 @@ export interface IHomeData {
   database: string[]
   tools: string[]
   github_url: string
+  resume_url: string
 }
