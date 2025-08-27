@@ -10,6 +10,9 @@ import Expertise from './Expertise'
 import type { IWorksData } from '@/types/Works'
 import RecentProjects from './RecentProjects'
 import Footer from '@/components/Footer'
+import type { MetaProps } from '../Meta'
+
+const HOME_URL = import.meta.env.VITE_APP_HOME_URL
 
 export default function HomePage() {
   const { data, error, isLoading } = useSWR<IHomeData>(HOME_JSON_PATH, fetcher)
@@ -26,10 +29,18 @@ export default function HomePage() {
     ?.sort((a, b) => b.timeline.localeCompare(a.timeline))
     .slice(0, 3)
 
+  const metaData: MetaProps = {
+    title: 'Home',
+    description: data?.description,
+    image: `/home.png`,
+    url: HOME_URL,
+  }
+
   return (
     <PageLayout
       title={data?.name}
       subtitle={data?.subtitle}
+      metaProps={metaData}
       topSection={
         <>
           <IntroductionCard subtitle={data?.subtitle} description={data?.description} />

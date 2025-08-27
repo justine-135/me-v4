@@ -9,6 +9,7 @@ import useThemeValues from '@/hooks/useThemeValues'
 import StackLayout from './StackLayout'
 import { useScrollToTop } from '@/hooks/useScrollToTop'
 import { Separator } from '@chakra-ui/react/separator'
+import Meta, { type MetaProps } from '@/pages/Meta'
 
 const BackButton = () => {
   const navigate = useNavigate()
@@ -34,6 +35,7 @@ interface IPageLayoutProps {
   topSection?: React.ReactNode
   asideSection?: React.ReactNode
   footerSection?: React.ReactNode
+  metaProps?: MetaProps
 }
 
 export default function PageLayout({
@@ -44,43 +46,47 @@ export default function PageLayout({
   topSection,
   asideSection,
   footerSection,
+  metaProps,
 }: IPageLayoutProps) {
   useScrollToTop()
 
   return (
-    <Stack gap={4} as="section">
-      <Stack gap={{ base: 2, sm: 6 }} maxW="4xl">
-        <Stack alignItems="start">
-          {showBackBtn && <BackButton />}
-          <Stack w="full">
-            {title && (
-              <Typography variant="heading" as="h1">
-                {title}
-              </Typography>
-            )}
-            {subtitle && <Typography>{subtitle}</Typography>}
-            {subtitle && title && <Separator />}
+    <>
+      <Meta {...metaProps} />
+      <Stack gap={4} as="section">
+        <Stack gap={{ base: 2, sm: 6 }} maxW="4xl">
+          <Stack alignItems="start">
+            {showBackBtn && <BackButton />}
+            <Stack w="full">
+              {title && (
+                <Typography variant="heading" as="h1">
+                  {title}
+                </Typography>
+              )}
+              {subtitle && <Typography>{subtitle}</Typography>}
+              {subtitle && title && <Separator />}
+            </Stack>
           </Stack>
-        </Stack>
-        {/* Top section */}
-        {topSection && <StackLayout>{topSection}</StackLayout>}
-        <FlexboxLayout>
-          {/* Main section */}
-          <StackLayout flex={1} as="section" w={{ base: '100%', md: '70%' }}>
-            {children}
-          </StackLayout>
-          {/* Right side section */}
-          {asideSection && (
-            <StackLayout as="aside" minW="186px" w={{ base: '100%', md: '30%' }}>
-              {asideSection}
+          {/* Top section */}
+          {topSection && <StackLayout>{topSection}</StackLayout>}
+          <FlexboxLayout>
+            {/* Main section */}
+            <StackLayout flex={1} as="section" w={{ base: '100%', md: '70%' }}>
+              {children}
             </StackLayout>
-          )}
-        </FlexboxLayout>
-        {/* Footer section */}
-        <FlexboxLayout flexDirection="column" as="section" w="full">
-          {footerSection}
-        </FlexboxLayout>
+            {/* Right side section */}
+            {asideSection && (
+              <StackLayout as="aside" minW="186px" w={{ base: '100%', md: '30%' }}>
+                {asideSection}
+              </StackLayout>
+            )}
+          </FlexboxLayout>
+          {/* Footer section */}
+          <FlexboxLayout flexDirection="column" as="section" w="full">
+            {footerSection}
+          </FlexboxLayout>
+        </Stack>
       </Stack>
-    </Stack>
+    </>
   )
 }
