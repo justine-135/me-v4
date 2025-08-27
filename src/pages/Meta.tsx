@@ -21,12 +21,12 @@ export default function Meta({ title, description, url, image }: MetaProps) {
       <meta property="og:description" content={defaultDescription} />
       <meta property="og:type" content="website" />
       {url && <meta property="og:url" content={url} />}
-      <meta property="og:image" content={image || defaultImage} />
+      <meta property="og:image" content={defaultImage} />
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={defaultTitle} />
       <meta name="twitter:description" content={defaultDescription} />
-      <meta name="twitter:image" content={image || defaultImage} />
+      <meta name="twitter:image" content={defaultImage} />
     </head>
   )
 }
