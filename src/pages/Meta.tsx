@@ -16,6 +16,11 @@ export default function Meta({ title, description, url, image }: MetaProps) {
     <head>
       <title>{defaultTitle}</title>
       <meta name="description" content={defaultDescription} />
+      <meta property="author" content="Justine Upano" />
+      <meta
+        property="keywords"
+        content="Justine Upano, tup graduate, tupc, computer engineer, frontend developer, developer, fullstack developer, reactjs developer, react js developer, react developer, php developer, web developer, software engineer"
+      />
 
       <meta property="og:title" content={defaultTitle} />
       <meta property="og:description" content={defaultDescription} />
