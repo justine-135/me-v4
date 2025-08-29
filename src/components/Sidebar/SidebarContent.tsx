@@ -10,11 +10,11 @@ import NavLinks from './NavLinks'
 import SocialsSection from './SocialsSection'
 
 export default function SidebarContent() {
-  const { data } = useSWR<IDev>(DEV_JSON_PATH, fetcher)
+  const { data, isLoading } = useSWR<IDev>(DEV_JSON_PATH, fetcher)
 
   return (
     <Stack gap={4}>
-      <AvatarSection name={data?.name} subtitle={data?.subtitle} />
+      <AvatarSection name={data?.name} subtitle={data?.subtitle} isLoading={isLoading} />
       <Separator />
       <Typography fontWeight={500} fontSize="xs">
         NAVIGATION
@@ -29,12 +29,13 @@ export default function SidebarContent() {
         learning_on={data?.learning_on}
         time={data?.time}
         location={data?.location}
+        isLoading={isLoading}
       />
       <Separator />
       <Typography fontWeight={500} fontSize="xs">
         CONNECT
       </Typography>
-      <SocialsSection socials={data?.socials} />
+      <SocialsSection socials={data?.socials} isLoading={isLoading} />
     </Stack>
   )
 }

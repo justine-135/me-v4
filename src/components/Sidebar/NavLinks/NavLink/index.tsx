@@ -6,14 +6,18 @@ import { Button } from '@chakra-ui/react/button'
 import useThemeValues from '@/hooks/useThemeValues'
 import { Text } from '@chakra-ui/react'
 import { useSidebarDrawerContext } from '@/hooks/useSidebarDrawerContext'
+import { motion } from 'motion/react'
+
+const MotionListItem = motion.create(List.Item)
 
 interface INavLinkProps {
   icon: string
   label: string
   id: string
+  index: number
 }
 
-export default function NavLink({ icon, label, id }: INavLinkProps) {
+export default function NavLink({ icon, label, id, index }: INavLinkProps) {
   const location = useLocation()
   const navigate = useNavigate()
   const { backgroundAccent } = useThemeValues()
@@ -28,7 +32,14 @@ export default function NavLink({ icon, label, id }: INavLinkProps) {
   }
 
   return (
-    <List.Item>
+    <MotionListItem
+      initial={{ opacity: 0, y: -10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: 0.2,
+        delay: index * 0.05,
+      }}
+    >
       <Button
         onClick={handleNavigate}
         variant="plain"
@@ -42,6 +53,6 @@ export default function NavLink({ icon, label, id }: INavLinkProps) {
           <Text fontWeight={400}>{label}</Text>
         </Flex>
       </Button>
-    </List.Item>
+    </MotionListItem>
   )
 }

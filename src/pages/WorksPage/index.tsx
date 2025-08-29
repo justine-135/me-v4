@@ -26,13 +26,18 @@ export default function WorksPage() {
 
   const metaData: MetaProps = {
     title: 'Works',
-    description: data?.intro,
+    description:
+      'A collection of my design work including featured projects with detailed case studies and side projects that showcase my exploration and learning journey',
     image: `/works.png`,
     url: WORKS_URL,
   }
 
   return (
-    <PageLayout title="Works" subtitle={data?.intro} metaProps={metaData}>
+    <PageLayout
+      title="Works"
+      subtitle="A collection of my design work including featured projects with detailed case studies and side projects that showcase my exploration and learning journey"
+      metaProps={metaData}
+    >
       <Stack gap={8}>
         <FeaturedProjectsCard projects={featureProjects} />
         <SideProjects projects={sideProjects} />

@@ -15,15 +15,19 @@ import type { MetaProps } from '../Meta'
 const HOME_URL = import.meta.env.VITE_APP_HOME_URL
 
 export default function HomePage() {
-  const { data, error, isLoading } = useSWR<IHomeData>(HOME_JSON_PATH, fetcher)
+  const {
+    data,
+    // error,
+    isLoading,
+  } = useSWR<IHomeData>(HOME_JSON_PATH, fetcher)
   const {
     data: works,
-    error: errorWorks,
-    isLoading: isLoadingWorks,
+    // error: errorWorks,
+    // isLoading: isLoadingWorks,
   } = useSWR<IWorksData>(WORKS_JSON_PATH, fetcher)
 
-  if (isLoading || isLoadingWorks) return <p>Loading...</p>
-  if (error || errorWorks) return <p>Failed to load data</p>
+  // if (isLoading || isLoadingWorks) return <p>Loading...</p>
+  // if (error || errorWorks) return <p>Failed to load data</p>
 
   const worksData = works?.featured_projects
     ?.sort((a, b) => b.timeline.localeCompare(a.timeline))
@@ -38,12 +42,13 @@ export default function HomePage() {
 
   return (
     <PageLayout
-      title={data?.name}
-      subtitle={data?.subtitle}
+      title="Justine Upano"
+      subtitle="Web Developer"
       metaProps={metaData}
+      isLoading={isLoading}
       topSection={
         <>
-          <IntroductionCard subtitle={data?.subtitle} description={data?.description} />
+          <IntroductionCard description={data?.description} />
           <ButtonGroup
             github_link={data?.github_url}
             works_link="works"

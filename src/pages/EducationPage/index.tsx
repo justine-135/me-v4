@@ -18,7 +18,7 @@ export default function EducationPage() {
 
   const metaData: MetaProps = {
     title: 'Education',
-    description: data?.intro,
+    description: 'My academic background and continuous learning journey in design and technology.',
     image: `/education.png`,
     url: EDUCATION_URL,
   }
@@ -26,7 +26,7 @@ export default function EducationPage() {
   return (
     <PageLayout
       title="Education"
-      subtitle={data?.intro}
+      subtitle="My academic background and continuous learning journey in design and technology."
       metaProps={metaData}
       asideSection={
         <>

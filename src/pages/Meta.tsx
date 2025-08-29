@@ -1,3 +1,5 @@
+import { Helmet } from 'react-helmet-async'
+
 export interface MetaProps {
   title?: string
   description?: string
@@ -13,7 +15,7 @@ export default function Meta({ title, description, url, image }: MetaProps) {
   const defaultImage = `${IMAGE_URL}${image || '/home.png'}`
 
   return (
-    <head>
+    <Helmet>
       <title>{defaultTitle}</title>
       <meta name="description" content={defaultDescription} />
       <meta property="author" content="Justine Upano" />
@@ -32,6 +34,6 @@ export default function Meta({ title, description, url, image }: MetaProps) {
       <meta name="twitter:title" content={defaultTitle} />
       <meta name="twitter:description" content={defaultDescription} />
       <meta name="twitter:image" content={defaultImage} />
-    </head>
+    </Helmet>
   )
 }

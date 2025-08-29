@@ -12,7 +12,6 @@ export interface IHardSkill {
 }
 
 export interface IEducationData {
-  intro: string
   education: IEducationItem[]
   soft_skills_learn: string[]
   hard_skills_learn: IHardSkill[]

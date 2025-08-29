@@ -15,7 +15,6 @@ export interface IProjects {
 }
 
 export interface IWorksData {
-  intro: string
   featured_projects: IProjects[]
 }
 

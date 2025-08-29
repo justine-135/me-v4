@@ -1,5 +1,6 @@
 import { List } from '@chakra-ui/react/list'
 import NavLink from './NavLink'
+import { motion } from 'motion/react'
 
 const NAV_ROUTES = [
   { id: '', label: 'Home', icon: '🏠' },
@@ -9,13 +10,15 @@ const NAV_ROUTES = [
   { id: 'contact', label: 'Contact me', icon: '💬' },
 ]
 
+const MotionListRoot = motion.create(List.Root)
+
 export default function index() {
   return (
-    <List.Root variant="plain" w="100%" as="nav">
-      {NAV_ROUTES.map((navRoute) => {
+    <MotionListRoot variant="plain" w="100%" as="nav">
+      {NAV_ROUTES.map((navRoute, idx) => {
         const { id, label, icon } = navRoute
-        return <NavLink icon={icon} id={id} label={label} key={id} />
+        return <NavLink icon={icon} id={id} label={label} key={id} index={idx} />
       })}
-    </List.Root>
+    </MotionListRoot>
   )
 }
