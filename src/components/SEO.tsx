@@ -1,0 +1,37 @@
+export interface SEOProps {
+  title?: string
+  description?: string
+  url?: string
+  image?: string
+}
+
+const IMAGE_URL = import.meta.env.VITE_APP_IMAGE_URL
+
+export default function SEO({ title, description, url, image }: SEOProps) {
+  const defaultTitle = title || 'Portfolio | Justine Upano'
+  const defaultDescription = description || 'Welcome to my portfolio page'
+  const defaultImage = `${IMAGE_URL}${image || '/home.png'}`
+
+  return (
+    <>
+      <title>{defaultTitle}</title>
+      <meta name="description" content={defaultDescription} />
+      <meta property="author" content="Justine Upano" />
+      <meta
+        property="keywords"
+        content="Justine Upano, tup graduate, tupc, computer engineer, frontend developer, developer, fullstack developer, reactjs developer, react js developer, react developer, php developer, web developer, software engineer"
+      />
+
+      <meta property="og:title" content={defaultTitle} />
+      <meta property="og:description" content={defaultDescription} />
+      <meta property="og:type" content="website" />
+      {url && <meta property="og:url" content={url} />}
+      <meta property="og:image" content={defaultImage} />
+
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={defaultTitle} />
+      <meta name="twitter:description" content={defaultDescription} />
+      <meta name="twitter:image" content={defaultImage} />
+    </>
+  )
+}
