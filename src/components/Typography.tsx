@@ -11,15 +11,15 @@ export const Typography: React.FC<TypographyProps> = ({ variant = 'body', childr
 
   const variantStyles = {
     heading: {
-      fontSize: ['xl', '2xl'],
-      fontWeight: 'semibold',
+      fontSize: ['3xl', '2xl'],
+      fontWeight: 'bold',
     },
     subheading: {
-      fontSize: ['sm', 'md'],
+      fontSize: ['xl', 'md'],
       fontWeight: 'semibold',
     },
     body: {
-      fontSize: ['xs', 'sm'],
+      fontSize: ['md', 'sm'],
       fontWeight: 'normal',
       color,
     },

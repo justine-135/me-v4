@@ -32,7 +32,15 @@ const TimelineItem = ({ title, subtitle, details, date, current, badges }: ITime
         <Stack gap={4}>
           <Stack>
             {details.map((detail, idx) => {
-              return <Timeline.Description key={idx}>{detail}</Timeline.Description>
+              return (
+                <Timeline.Description
+                  key={idx}
+                  fontSize={{ base: 'sm', sm: 'xs' }}
+                  lineHeight={{ base: 2, md: 1.5 }}
+                >
+                  {detail}
+                </Timeline.Description>
+              )
             })}
           </Stack>
           <Timeline.Description>

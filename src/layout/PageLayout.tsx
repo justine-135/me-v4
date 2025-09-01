@@ -184,7 +184,7 @@ export default function PageLayout({
     <>
       <Meta {...metaProps} />
       <Stack gap={4} as="section">
-        <Stack gap={{ base: 2, sm: 6 }} maxW="4xl">
+        <Stack gap={{ base: 4, sm: 6 }} maxW="4xl">
           <HeadingSection showBackBtn={showBackBtn} title={title} subtitle={subtitle} />
           <MainContentSection
             asideSection={asideSection}

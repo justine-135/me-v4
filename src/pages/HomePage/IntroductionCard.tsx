@@ -6,5 +6,9 @@ interface IIntroductionCardProps {
 }
 
 export default function IntroductionCard({ description }: IIntroductionCardProps) {
-  return <Text maxW="3xl">{description}</Text>
+  return (
+    <Text maxW="3xl" fontSize={{ base: 'lg', sm: 'md' }}>
+      {description}
+    </Text>
+  )
 }
