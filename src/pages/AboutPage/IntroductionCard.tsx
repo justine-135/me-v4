@@ -15,8 +15,8 @@ export const IntroductionCard = ({
 }) => {
   return (
     <Stack gap={8}>
-      <HStack gap={3}>
-        <AvatarCustom size="2xl" src={ProfileImg} fallback={name || ''} />
+      <HStack gap={6} pt={4}>
+        <AvatarCustom h={100} w={100} src={ProfileImg} fallback={name || ''} />
         <Stack gap="1" alignItems="start">
           <Typography variant="heading" fontSize={{ base: 'xl', sm: '2xl' }}>
             {name}
