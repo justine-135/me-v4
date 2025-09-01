@@ -12,7 +12,12 @@ export default function HomeSkeleton() {
             <Skeleton h="36px" w="90px" />
             <Skeleton h="36px" w="90px" />
           </Flex>
-          <Flex justifyContent="space-between" gap={4} wrap="wrap">
+          <Flex
+            direction={{ base: 'column', sm: 'row' }}
+            justifyContent="space-between"
+            gap={4}
+            wrap="wrap"
+          >
             {Array.from({ length: 4 }).map((_, idx) => {
               return (
                 <CardCustom flex={1} key={idx}>
