@@ -15,7 +15,7 @@ export default function AboutPage() {
   const { data, isLoading } = useCustomSWR<IAboutData>({ path: ABOUT_JSON_PATH })
 
   const metaData: MetaProps = {
-    title: 'About',
+    title: 'About | Justine Upano',
     description: 'Learn more about my background and experience',
     image: `/about.png`,
     url: ABOUT_URL,
@@ -23,7 +23,7 @@ export default function AboutPage() {
 
   return (
     <PageLayout
-      title="About | Justine Upano"
+      title="About"
       subtitle="Learn more about my background and experience"
       metaProps={metaData}
       isLoading={isLoading}
