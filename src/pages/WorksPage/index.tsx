@@ -22,7 +22,7 @@ export default function WorksPage() {
     .sort((a, b) => b.timeline.localeCompare(a.timeline))
 
   const metaData: MetaProps = {
-    title: 'Works',
+    title: 'Works | Justine Upano',
     description:
       'A collection of my design work including featured projects with detailed case studies and side projects that showcase my exploration and learning journey',
     image: `/works.png`,

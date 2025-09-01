@@ -14,7 +14,7 @@ export default function EducationPage() {
   const { data, isLoading } = useCustomSWR<IEducationData>({ path: EDUCATION_JSON_PATH })
 
   const metaData: MetaProps = {
-    title: 'Education',
+    title: 'Education | Justine Upano',
     description: 'My academic background and continuous learning journey in design and technology.',
     image: `/education.png`,
     url: EDUCATION_URL,

@@ -23,7 +23,7 @@ export default function AboutPage() {
 
   return (
     <PageLayout
-      title="About"
+      title="About | Justine Upano"
       subtitle="Learn more about my background and experience"
       metaProps={metaData}
       isLoading={isLoading}

@@ -30,7 +30,7 @@ export default function HomePage() {
     .slice(0, 3)
 
   const metaData: MetaProps = {
-    title: 'Home',
+    title: 'Home | Justine Upano',
     description:
       "I'm a passionate web developer currently working as a ReactJS developer while building my portfolio through academic projects and personal side projects. I love creating responsive, user-friendly web applications and continuously learning new technologies.",
     image: `/home.png`,

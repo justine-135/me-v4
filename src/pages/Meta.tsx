@@ -10,7 +10,7 @@ export interface MetaProps {
 const IMAGE_URL = import.meta.env.VITE_APP_IMAGE_URL
 
 export default function Meta({ title, description, url, image }: MetaProps) {
-  const defaultTitle = `Justine Upano | ${title || 'Portfolio'}`
+  const defaultTitle = title || 'Portfolio | Justine Upano'
   const defaultDescription = description || 'Welcome to my portfolio page'
   const defaultImage = `${IMAGE_URL}${image || '/home.png'}`
 
