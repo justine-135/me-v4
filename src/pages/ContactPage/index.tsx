@@ -3,13 +3,13 @@ import IntroductionCard from './IntroductionCard'
 import { FormCard } from './FormCard'
 import LinksCard from './LinksCard'
 import LocationCard from './LocationCard'
-import type { MetaProps } from '../Meta'
+import type { SEOProps } from '../../components/SEO'
 import EducationSkeleton from '@/components/Skeleton/EducationSkeleton'
 
 const CONTACT_URL = import.meta.env.VITE_APP_CONTACT_URL
 
 export default function ContactPage() {
-  const metaData: MetaProps = {
+  const metaData: SEOProps = {
     title: 'Contact',
     description:
       "I'm always excited to hear about new projects and opportunities. Drop me a message and let's discuss how I can contribute to your business.",
@@ -20,7 +20,7 @@ export default function ContactPage() {
   return (
     <PageLayout
       title="Contact me"
-      metaProps={metaData}
+      SEOProps={metaData}
       skeleton={<EducationSkeleton />}
       asideSection={
         <>

@@ -9,11 +9,12 @@ import useThemeValues from '@/hooks/useThemeValues'
 import StackLayout from './StackLayout'
 import { useScrollToTop } from '@/hooks/useScrollToTop'
 import { Separator } from '@chakra-ui/react/separator'
-import Meta, { type MetaProps } from '@/pages/Meta'
+import { type SEOProps } from '@/components/SEO'
 import { motion, useAnimate } from 'motion/react'
 import { useEffect } from 'react'
 import { Box } from '@chakra-ui/react'
 import HomeSkeleton from '@/components/Skeleton/HomeSkeleton'
+import SEO from '@/components/SEO'
 
 const MotionStack = motion.create(StackLayout)
 
@@ -162,7 +163,7 @@ interface IPageLayoutProps {
   asideSection?: React.ReactNode
   footerSection?: React.ReactNode
   isLoading?: boolean
-  metaProps?: MetaProps
+  SEOProps?: SEOProps
   skeleton?: React.ReactNode
 }
 
@@ -175,14 +176,14 @@ export default function PageLayout({
   asideSection,
   footerSection,
   isLoading = false,
-  metaProps,
+  SEOProps,
   skeleton,
 }: IPageLayoutProps) {
   useScrollToTop()
 
   return (
     <>
-      <Meta {...metaProps} />
+      <SEO {...SEOProps} />
       <Stack gap={4} as="section">
         <Stack gap={{ base: 4, sm: 6 }} maxW="4xl">
           <HeadingSection showBackBtn={showBackBtn} title={title} subtitle={subtitle} />

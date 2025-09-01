@@ -8,7 +8,7 @@ import SideProjects from './components/SideProjects'
 import { useScrollToId } from '@/hooks/useScrollToId'
 import { Stack } from '@chakra-ui/react/stack'
 import Footer from '@/components/Footer'
-import type { MetaProps } from '../Meta'
+import type { SEOProps } from '../../components/SEO'
 
 const WORKS_URL = import.meta.env.VITE_APP_WORKS_URL
 
@@ -21,7 +21,7 @@ export default function WorksPage() {
     .filter((project) => !project.is_featured)
     .sort((a, b) => b.timeline.localeCompare(a.timeline))
 
-  const metaData: MetaProps = {
+  const metaData: SEOProps = {
     title: 'Works | Justine Upano',
     description:
       'A collection of my design work including featured projects with detailed case studies and side projects that showcase my exploration and learning journey',
@@ -33,7 +33,7 @@ export default function WorksPage() {
     <PageLayout
       title="Works"
       subtitle="A collection of my design work including featured projects with detailed case studies and side projects that showcase my exploration and learning journey"
-      metaProps={metaData}
+      SEOProps={metaData}
       isLoading={isLoading}
     >
       <Stack gap={8}>

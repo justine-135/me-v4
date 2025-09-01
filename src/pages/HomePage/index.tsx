@@ -8,29 +8,23 @@ import Expertise from './Expertise'
 import type { IWorksData } from '@/types/Works'
 import RecentProjects from './RecentProjects'
 import Footer from '@/components/Footer'
-import type { MetaProps } from '../Meta'
+import type { SEOProps } from '../../components/SEO'
 import useCustomSWR from '@/hooks/useCustomSWR'
 
 const HOME_URL = import.meta.env.VITE_APP_HOME_URL
 
 export default function HomePage() {
-  const {
-    data,
-    // error,
-    isLoading,
-  } = useCustomSWR<IHomeData>({ path: HOME_JSON_PATH })
-  const {
-    data: works,
-    // error: errorWorks,
-    isLoading: isLoadingWorks,
-  } = useCustomSWR<IWorksData>({ path: WORKS_JSON_PATH })
+  const { data, isLoading } = useCustomSWR<IHomeData>({ path: HOME_JSON_PATH })
+  const { data: works, isLoading: isLoadingWorks } = useCustomSWR<IWorksData>({
+    path: WORKS_JSON_PATH,
+  })
 
   const worksData = works?.featured_projects
     ?.sort((a, b) => b.timeline.localeCompare(a.timeline))
     .slice(0, 3)
 
-  const metaData: MetaProps = {
-    title: 'Home | Justine Upano',
+  const metaData: SEOProps = {
+    title: 'Justine Upano',
     description:
       "I'm a passionate web developer currently working as a ReactJS developer while building my portfolio through academic projects and personal side projects. I love creating responsive, user-friendly web applications and continuously learning new technologies.",
     image: `/home.png`,
@@ -41,7 +35,7 @@ export default function HomePage() {
     <PageLayout
       title="Justine Upano"
       subtitle="Web Developer"
-      metaProps={metaData}
+      SEOProps={metaData}
       isLoading={isLoading || isLoadingWorks}
       topSection={
         <>

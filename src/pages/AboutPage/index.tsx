@@ -5,7 +5,7 @@ import { InterestsCard } from './InterestsCard'
 import PageLayout from '@/layout/PageLayout'
 import { ABOUT_JSON_PATH } from '@/constants/paths'
 import type { IAboutData } from '@/types/About'
-import type { MetaProps } from '../Meta'
+import type { SEOProps } from '../../components/SEO'
 import AboutSkeleton from '@/components/Skeleton/AboutSkeleton'
 import useCustomSWR from '@/hooks/useCustomSWR'
 
@@ -14,7 +14,7 @@ const ABOUT_URL = import.meta.env.VITE_APP_ABOUT_URL
 export default function AboutPage() {
   const { data, isLoading } = useCustomSWR<IAboutData>({ path: ABOUT_JSON_PATH })
 
-  const metaData: MetaProps = {
+  const metaData: SEOProps = {
     title: 'About | Justine Upano',
     description: 'Learn more about my background and experience',
     image: `/about.png`,
@@ -25,7 +25,7 @@ export default function AboutPage() {
     <PageLayout
       title="About"
       subtitle="Learn more about my background and experience"
-      metaProps={metaData}
+      SEOProps={metaData}
       isLoading={isLoading}
       skeleton={<AboutSkeleton />}
       asideSection={
