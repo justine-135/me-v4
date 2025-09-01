@@ -4,18 +4,15 @@ import { SkillsCard } from './SkillsCard'
 import { InterestsCard } from './InterestsCard'
 import PageLayout from '@/layout/PageLayout'
 import { ABOUT_JSON_PATH } from '@/constants/paths'
-import useSWR from 'swr'
-import { fetcher } from '@/util'
 import type { IAboutData } from '@/types/About'
 import type { MetaProps } from '../Meta'
+import AboutSkeleton from '@/components/Skeleton/AboutSkeleton'
+import useCustomSWR from '@/hooks/useCustomSWR'
 
 const ABOUT_URL = import.meta.env.VITE_APP_ABOUT_URL
 
 export default function AboutPage() {
-  const { data, error, isLoading } = useSWR<IAboutData>(ABOUT_JSON_PATH, fetcher)
-
-  if (isLoading) return <p>Loading...</p>
-  if (error) return <p>Failed to load data</p>
+  const { data, isLoading } = useCustomSWR<IAboutData>({ path: ABOUT_JSON_PATH })
 
   const metaData: MetaProps = {
     title: 'About',
@@ -29,6 +26,8 @@ export default function AboutPage() {
       title="About"
       subtitle="Learn more about my background and experience"
       metaProps={metaData}
+      isLoading={isLoading}
+      skeleton={<AboutSkeleton />}
       asideSection={
         <>
           <SkillsCard skills={data?.skills} />

@@ -13,11 +13,8 @@ import type { MetaProps } from '../Meta'
 const WORKS_URL = import.meta.env.VITE_APP_WORKS_URL
 
 export default function WorksPage() {
-  const { data, error, isLoading } = useSWR<IWorksData>(WORKS_JSON_PATH, fetcher)
+  const { data, isLoading } = useSWR<IWorksData>(WORKS_JSON_PATH, fetcher)
   useScrollToId()
-
-  if (isLoading) return <p>Loading...</p>
-  if (error) return <p>Failed to load data</p>
 
   const featureProjects = data?.featured_projects.filter((project) => project.is_featured)
   const sideProjects = data?.featured_projects
@@ -37,6 +34,7 @@ export default function WorksPage() {
       title="Works"
       subtitle="A collection of my design work including featured projects with detailed case studies and side projects that showcase my exploration and learning journey"
       metaProps={metaData}
+      isLoading={isLoading}
     >
       <Stack gap={8}>
         <FeaturedProjectsCard projects={featureProjects} />

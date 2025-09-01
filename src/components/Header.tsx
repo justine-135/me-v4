@@ -15,20 +15,20 @@ export default function Header() {
       alignItems="center"
       h="48px"
       w="100%"
-      paddingX={{ base: 4, sm: 8 }}
+      paddingX={{ base: 0, sm: 8 }}
       background={background}
       borderBottomWidth="1px"
       zIndex={3}
       as="header"
     >
-      <Box>
-        <AvailableBadge />
-      </Box>
-      <Box display={{ base: 'none', sm: 'block' }}>
-        <ToggleThemeButton />
-      </Box>
       <Box display={{ base: 'block', sm: 'none' }}>
         <SidebarDrawer />
+      </Box>
+      <Box display={{ base: 'none', sm: 'block' }}>
+        <AvailableBadge />
+      </Box>
+      <Box>
+        <ToggleThemeButton />
       </Box>
     </Flex>
   )

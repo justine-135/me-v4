@@ -4,6 +4,7 @@ import { FormCard } from './FormCard'
 import LinksCard from './LinksCard'
 import LocationCard from './LocationCard'
 import type { MetaProps } from '../Meta'
+import EducationSkeleton from '@/components/Skeleton/EducationSkeleton'
 
 const CONTACT_URL = import.meta.env.VITE_APP_CONTACT_URL
 
@@ -20,6 +21,7 @@ export default function ContactPage() {
     <PageLayout
       title="Contact me"
       metaProps={metaData}
+      skeleton={<EducationSkeleton />}
       asideSection={
         <>
           <LinksCard />

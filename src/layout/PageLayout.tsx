@@ -10,7 +10,10 @@ import StackLayout from './StackLayout'
 import { useScrollToTop } from '@/hooks/useScrollToTop'
 import { Separator } from '@chakra-ui/react/separator'
 import Meta, { type MetaProps } from '@/pages/Meta'
-import { motion } from 'motion/react'
+import { motion, useAnimate } from 'motion/react'
+import { useEffect } from 'react'
+import { Box } from '@chakra-ui/react'
+import HomeSkeleton from '@/components/Skeleton/HomeSkeleton'
 
 const MotionStack = motion.create(StackLayout)
 
@@ -37,6 +40,7 @@ interface IMainContentSection {
   footerSection?: React.ReactNode
   children: React.ReactNode
   isLoading?: boolean
+  skeleton?: React.ReactNode
 }
 
 const MainContentSection = ({
@@ -44,47 +48,69 @@ const MainContentSection = ({
   children,
   asideSection,
   footerSection,
-  isLoading,
+  isLoading = false,
+  skeleton = <HomeSkeleton />,
 }: IMainContentSection) => {
-  if (isLoading)
-    return (
-      <motion.div
-        variants={motionVariants}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
-        LOADING!!!
-      </motion.div>
-    )
+  const [scope, animate] = useAnimate()
+  const [scopeSkeleton, animateSkeleton] = useAnimate()
+
+  useEffect(() => {
+    if (isLoading) {
+      animateSkeleton(scopeSkeleton.current, { opacity: [0, 1], y: [-10, 0] }, { duration: 0.4 })
+      return
+    }
+
+    if (!isLoading) {
+      animate(
+        scopeSkeleton.current,
+        {
+          opacity: [1, 0],
+          y: [0, -10],
+          position: ['relative', 'absolute'],
+          display: ['block', 'none'],
+        },
+        { duration: 0.4 }
+      )
+      animate(scope.current, { opacity: [0, 1], y: [10, 0] }, { duration: 0.4, delay: 0.6 })
+    }
+  }, [isLoading, animate, scope, animateSkeleton, scopeSkeleton])
 
   return (
-    <MotionStack
-      variants={motionVariants}
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      transition={{ duration: 0.2 }}
-    >
-      {/* Top section */}
-      {topSection && <Stack>{topSection}</Stack>}
-      <FlexboxLayout>
-        {/* Main section */}
-        <StackLayout flex={1} as="section" w={{ base: '100%', md: '70%' }}>
-          {children}
-        </StackLayout>
-        {/* Right side section */}
-        {asideSection && (
-          <StackLayout as="aside" minW="186px" w={{ base: '100%', md: '30%' }}>
-            {asideSection}
-          </StackLayout>
-        )}
-      </FlexboxLayout>
-      {/* Footer section */}
-      <FlexboxLayout flexDirection="column" as="section" w="full">
-        {footerSection}
-      </FlexboxLayout>
-    </MotionStack>
+    <Box position="relative" w="full">
+      <Box ref={scopeSkeleton} pt={4}>
+        {skeleton}
+      </Box>
+      {!isLoading && (
+        <div ref={scope}>
+          <MotionStack
+            variants={motionVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            transition={{ duration: 0.2 }}
+          >
+            {/* Top section */}
+            {topSection && <Stack spaceY={4}>{topSection}</Stack>}
+            <FlexboxLayout>
+              {/* Main section */}
+              <StackLayout flex={1} as="section" w={{ base: '100%', md: '70%' }}>
+                {children}
+              </StackLayout>
+              {/* Right side section */}
+              {asideSection && (
+                <StackLayout as="aside" minW="186px" w={{ base: '100%', md: '30%' }}>
+                  {asideSection}
+                </StackLayout>
+              )}
+            </FlexboxLayout>
+            {/* Footer section */}
+            <FlexboxLayout flexDirection="column" as="section" w="full">
+              {footerSection}
+            </FlexboxLayout>
+          </MotionStack>
+        </div>
+      )}
+    </Box>
   )
 }
 
@@ -137,6 +163,7 @@ interface IPageLayoutProps {
   footerSection?: React.ReactNode
   isLoading?: boolean
   metaProps?: MetaProps
+  skeleton?: React.ReactNode
 }
 
 export default function PageLayout({
@@ -147,8 +174,9 @@ export default function PageLayout({
   topSection,
   asideSection,
   footerSection,
-  isLoading,
+  isLoading = false,
   metaProps,
+  skeleton,
 }: IPageLayoutProps) {
   useScrollToTop()
 
@@ -163,6 +191,7 @@ export default function PageLayout({
             topSection={topSection}
             footerSection={footerSection}
             isLoading={isLoading}
+            skeleton={skeleton}
           >
             {children}
           </MainContentSection>

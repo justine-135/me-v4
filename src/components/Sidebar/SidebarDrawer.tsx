@@ -1,5 +1,5 @@
 import { Button, CloseButton, Drawer, Portal } from '@chakra-ui/react'
-import { BiMenuAltRight } from 'react-icons/bi'
+import { BiMenuAltLeft } from 'react-icons/bi'
 import { ToggleThemeButton } from '../Button/ToggleThemeButton'
 import SidebarContent from './SidebarContent'
 import { useState } from 'react'
@@ -9,10 +9,10 @@ export const SidebarDrawer = () => {
   const [open, setOpen] = useState(false)
 
   return (
-    <Drawer.Root open={open} onOpenChange={(e) => setOpen(e.open)}>
-      <Drawer.Trigger asChild>
-        <Button variant="plain">
-          <BiMenuAltRight />
+    <Drawer.Root placement="start" open={open} onOpenChange={(e) => setOpen(e.open)}>
+      <Drawer.Trigger px={0} asChild>
+        <Button variant="plain" px={0}>
+          <BiMenuAltLeft />
         </Button>
       </Drawer.Trigger>
       <Portal>

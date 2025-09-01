@@ -20,14 +20,12 @@ import Footer from '@/components/Footer'
 export default function FeaturedProjectsPage() {
   const param = useParams()
   const { id } = param
-  const { data, error, isLoading } = useSWR<IFeaturedProject>(`/data/work-${id}.json`, fetcher)
-
-  if (isLoading) return <p>Loading...</p>
-  if (error) return <p>Failed to load data</p>
+  const { data, isLoading } = useSWR<IFeaturedProject>(`/data/work-${id}.json`, fetcher)
 
   return (
     <PageLayout
       showBackBtn
+      isLoading={isLoading}
       topSection={
         <>
           <IntroductionCard title={data?.title} description={data?.description} />

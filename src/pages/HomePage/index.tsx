@@ -1,7 +1,5 @@
 import { HOME_JSON_PATH, WORKS_JSON_PATH } from '@/constants/paths'
 import PageLayout from '@/layout/PageLayout'
-import { fetcher } from '@/util'
-import useSWR from 'swr'
 import IntroductionCard from './IntroductionCard'
 import type { IHomeData } from '@/types/Home'
 import ButtonGroup from './ButtonGroup'
@@ -11,6 +9,7 @@ import type { IWorksData } from '@/types/Works'
 import RecentProjects from './RecentProjects'
 import Footer from '@/components/Footer'
 import type { MetaProps } from '../Meta'
+import useCustomSWR from '@/hooks/useCustomSWR'
 
 const HOME_URL = import.meta.env.VITE_APP_HOME_URL
 
@@ -19,15 +18,12 @@ export default function HomePage() {
     data,
     // error,
     isLoading,
-  } = useSWR<IHomeData>(HOME_JSON_PATH, fetcher)
+  } = useCustomSWR<IHomeData>({ path: HOME_JSON_PATH })
   const {
     data: works,
     // error: errorWorks,
-    // isLoading: isLoadingWorks,
-  } = useSWR<IWorksData>(WORKS_JSON_PATH, fetcher)
-
-  // if (isLoading || isLoadingWorks) return <p>Loading...</p>
-  // if (error || errorWorks) return <p>Failed to load data</p>
+    isLoading: isLoadingWorks,
+  } = useCustomSWR<IWorksData>({ path: WORKS_JSON_PATH })
 
   const worksData = works?.featured_projects
     ?.sort((a, b) => b.timeline.localeCompare(a.timeline))
@@ -35,7 +31,8 @@ export default function HomePage() {
 
   const metaData: MetaProps = {
     title: 'Home',
-    description: data?.description,
+    description:
+      "I'm a passionate web developer currently working as a ReactJS developer while building my portfolio through academic projects and personal side projects. I love creating responsive, user-friendly web applications and continuously learning new technologies.",
     image: `/home.png`,
     url: HOME_URL,
   }
@@ -45,7 +42,7 @@ export default function HomePage() {
       title="Justine Upano"
       subtitle="Web Developer"
       metaProps={metaData}
-      isLoading={isLoading}
+      isLoading={isLoading || isLoadingWorks}
       topSection={
         <>
           <IntroductionCard description={data?.description} />
@@ -62,6 +59,7 @@ export default function HomePage() {
           />
         </>
       }
+      footerSection={<Footer />}
     >
       <Expertise
         frontend={data?.frontend}
@@ -70,7 +68,6 @@ export default function HomePage() {
         tools={data?.tools}
       />
       <RecentProjects projects={worksData} />
-      <Footer />
     </PageLayout>
   )
 }
