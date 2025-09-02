@@ -49,8 +49,8 @@
   ],
   "hard_skills_learn": [
     {
-      "title": "Advanced JavaScript (ES6+)",
-      "description": "Deepening knowledge in modern JavaScript features for building dynamic and scalable applications."
+      "title": "React Native",
+      "description": "Building cross-platform mobile applications using React Native and Expo."
     },
     {
       "title": "Design Principles",
