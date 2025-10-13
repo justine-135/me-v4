@@ -1,7 +1,7 @@
 {
   "description": "I'm a passionate web developer currently working as a ReactJS developer while building my portfolio through academic projects and personal side projects. I love creating responsive, user-friendly web applications and continuously learning new technologies.",
-  "private_contributions": 35,
-  "academic_projects": 8,
+  "private_contributions": 800,
+  "academic_projects": 6,
   "learning_projects": 15,
   "technologies": 12,
   "frontend": ["html", "css", "javascript", "typescript", "reactjs", "nextjs"],
