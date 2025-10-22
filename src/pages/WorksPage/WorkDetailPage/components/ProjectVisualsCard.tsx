@@ -4,7 +4,6 @@ import {
   Image,
   Dialog,
   useDisclosure,
-  CloseButton,
   VStack,
   Stack,
   Box,
@@ -20,20 +19,17 @@ interface IProjectVisualsCardProps {
 }
 
 const Thumbnail = ({ src }: { src: string }) => {
-  const { open, onToggle } = useDisclosure()
+  const { open, onClose, onOpen } = useDisclosure()
 
   return (
     <>
-      <Dialog.Root open={open} placement="center" size="lg">
-        <Dialog.Backdrop onClick={onToggle} />
+      <Dialog.Root open={open} placement="center" size="lg" onOpenChange={onClose}>
+        <Dialog.Backdrop />
         <Dialog.Positioner>
           <Dialog.Content bg="transparent" shadow="none">
-            <Dialog.CloseTrigger top="0" insetEnd="-12" asChild onClick={onToggle} bg="transparent">
-              <CloseButton bg="bg" size="sm" color="white" />
-            </Dialog.CloseTrigger>
             <Dialog.Body p={0}>
               <VStack>
-                <Image src={src} h="auto" w="auto" objectFit="contain" />
+                <Image src={src} h="auto" w="full" objectFit="contain" />
               </VStack>
             </Dialog.Body>
           </Dialog.Content>
@@ -41,7 +37,7 @@ const Thumbnail = ({ src }: { src: string }) => {
       </Dialog.Root>
       <CardCustom
         imageProps={{ src }}
-        onClick={onToggle}
+        onClick={onOpen}
         _hover={{ cursor: 'pointer' }}
         h="100px"
         flex="1fr"
