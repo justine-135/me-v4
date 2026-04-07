@@ -4,10 +4,14 @@
   "academic_projects": 6,
   "learning_projects": 15,
   "technologies": 12,
-  "frontend": ["html", "css", "javascript", "typescript", "reactjs", "nextjs"],
-  "backend": ["python", "php", "nodejs", "prisma"],
-  "database": ["mysql", "postgresql"],
-  "tools": ["vscode", "postman", "git/github", "vite", "vercel"],
+  "core": [
+    "React.js, Next.js, TypeScript",
+    "Python, PHP, Node.js, Express.js",
+    "Prisma ORM",
+    "Supabase"
+  ],
+  "database": ["MySQL", "PostgreSQL"],
+  "tools": ["Git, GitHub", "Vercel", "Postman", "Vite"],
   "github_url": "https://github.com/justine-135",
   "resume_url": "https://docs.google.com/document/d/1wHkqJ8zwCc7Y8CglZxbdbdLgSwNJMKvM_Zi32ODKIPo/edit?usp=sharing"
 }

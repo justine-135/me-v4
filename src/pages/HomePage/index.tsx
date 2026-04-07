@@ -55,12 +55,7 @@ export default function HomePage() {
       }
       footerSection={<Footer />}
     >
-      <Expertise
-        frontend={data?.frontend}
-        backend={data?.backend}
-        database={data?.database}
-        tools={data?.tools}
-      />
+      <Expertise core={data?.core} database={data?.database} tools={data?.tools} />
       <RecentProjects projects={worksData} />
     </PageLayout>
   )

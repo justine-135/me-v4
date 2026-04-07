@@ -1,6 +1,6 @@
 import CardCustom from '@/components/CardCustom'
 import { Typography } from '@/components/Typography'
-import { Flex, Stack, Text } from '@chakra-ui/react'
+import { Badge, Box, Flex, Stack, VStack } from '@chakra-ui/react'
 
 interface ISectionProps {
   title: string
@@ -11,27 +11,26 @@ const Section = ({ title, values }: ISectionProps) => {
   return (
     <Stack flex={1} as="section">
       <Typography fontWeight="500">{title}</Typography>
-      <Stack as="ul">
+      <VStack as="ul" alignItems="start">
         {values?.map((value, idx) => {
           return (
-            <Text key={idx} as="li" fontSize="sm">
-              {value}
-            </Text>
+            <Box key={idx} as="li" w="auto">
+              <Badge>{value}</Badge>
+            </Box>
           )
         })}
-      </Stack>
+      </VStack>
     </Stack>
   )
 }
 
 interface IExpertiseProps {
-  frontend?: string[]
-  backend?: string[]
+  core?: string[]
   database?: string[]
   tools?: string[]
 }
 
-export default function Expertise({ frontend, backend, database, tools }: IExpertiseProps) {
+export default function Expertise({ core, database, tools }: IExpertiseProps) {
   return (
     <CardCustom cardTitle="Skills & expertise">
       <Stack gap={4}>
@@ -39,8 +38,7 @@ export default function Expertise({ frontend, backend, database, tools }: IExper
           Technologies and tools I'm mastering to build modern web applications
         </Typography>
         <Flex wrap="wrap" gap={4}>
-          <Section title="Frontend" values={frontend} />
-          <Section title="Backend" values={backend} />
+          <Section title="Core Technologies" values={core} />
           <Section title="Database" values={database} />
           <Section title="Tools" values={tools} />
         </Flex>

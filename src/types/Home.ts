@@ -6,7 +6,7 @@ export interface IHomeData {
   academic_projects: number
   learning_projects: number
   technologies: number
-  frontend: string[]
+  core: string[]
   backend: string[]
   database: string[]
   tools: string[]
