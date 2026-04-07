@@ -5,9 +5,9 @@
   "learning_projects": 15,
   "technologies": 12,
   "frontend": ["html", "css", "javascript", "typescript", "reactjs", "nextjs"],
-  "backend": ["python", "php", "express"],
+  "backend": ["python", "php", "nodejs", "prisma"],
   "database": ["mysql", "postgresql"],
-  "tools": ["vscode", "postman", "git/github", "vite", "nodejs"],
+  "tools": ["vscode", "postman", "git/github", "vite", "vercel"],
   "github_url": "https://github.com/justine-135",
   "resume_url": "https://docs.google.com/document/d/1wHkqJ8zwCc7Y8CglZxbdbdLgSwNJMKvM_Zi32ODKIPo/edit?usp=sharing"
 }
